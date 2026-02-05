@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marsa – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+
+  <link rel="stylesheet" href="visitor/css/style.css">
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+  <!-- Toast container -->
+  <div id="toastArea" class="p-2"></div>
+
+  <!-- Topbar Start -->
+  <div id="marsa-topbar" class="marsa-topbar container-fluid bg-dark px-5">
+    <div class="row gx-0">
+      <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+        <div class="d-inline-flex align-items-center" style="height: 45px;">
+          <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Jeddah, Saudi Arabia</small>
+          <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+966 5 0000 0000</small>
+          <small class="text-light"><i class="fa fa-envelope-open me-2"></i>support@marsa.sa</small>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center text-lg-end">
+        <div class="d-inline-flex align-items-center gap-2" style="height: 45px;">
+          <a class="btn btn-sm btn-outline-light rounded-pill px-3" href="login.html">
+            <i class="fa fa-sign-in-alt me-1"></i> Login
+          </a>
+          <a class="btn btn-sm btn-primary rounded-pill px-3" href="signup.html">
+            <i class="fa fa-user-plus me-1"></i> Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light mt-5 px-4 px-lg-5 py-3 py-lg-0 bg-white shadow-sm">
+    <div class="container-fluid px-4 px-lg-5">
+      <a href="visitor/index.html" class="navbar-brand p-0">
+        <h1 class="text-primary m-0"><i class="fa fa-water me-3"></i>Marsa</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a href="visitor/index.html#home" class="nav-item nav-link">Home</a>
+          <a href="visitor/index.html#about" class="nav-item nav-link">About Marsa</a>
+          <a href="visitor/all-islands.html" class="nav-item nav-link">Islands</a>
+          <a href="visitor/index.html#activities" class="nav-item nav-link">Activities</a>
+          <a href="visitor/index.html#nearby" class="nav-item nav-link">Nearby</a>
+          <a href="visitor/index.html#reviews" class="nav-item nav-link">Reviews</a>
+          <a href="visitor/index.html#contact" class="nav-item nav-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Auth content -->
+  <section class="auth-wrapper">
+    <div class="auth-card row g-0" data-aos="fade-up" data-aos-duration="900" data-aos-offset="120">
+      <!-- Left hero (reuse but with login messaging) -->
+      <div class="col-lg-5 auth-hero"
+           data-aos="fade-right" data-aos-duration="900" data-aos-delay="150">
+        <div class="auth-hero-content d-flex flex-column justify-content-between h-100">
+          <div>
+            <div class="auth-hero-badge">
+              <i class="fa-solid fa-sailboat"></i>
+              Welcome back to Marsa
+            </div>
+            <h2>Continue your island journey</h2>
+            <p>
+              Log in to view your saved trips, manage active bookings, and discover new activities
+              across Saudi Red Sea islands.
+            </p>
+
+            <ul class="auth-hero-list">
+              <li>
+                <i class="fa-solid fa-calendar-check"></i>
+                Track upcoming and past bookings easily.
+              </li>
+              <li>
+                <i class="fa-solid fa-heart"></i>
+                Access your favourite islands and activities.
+              </li>
+              <li>
+                <i class="fa-solid fa-user-gear"></i>
+                Update your profile, language, and preferences.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+          
+          </div>
+        </div>
+
+        <div class="auth-hero-wave"></div>
+      </div>
+
+      <!-- Right login form -->
+      <div class="col-lg-7 auth-form-wrapper"
+           data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+        <div class="d-flex justify-content-between align-items-center mb-2"
+             data-aos="fade-down" data-aos-duration="800" data-aos-delay="250">
+          <div>
+            <h3 class="auth-title">Login to your account</h3>
+            <p class="auth-subtitle mb-0">
+              Enter your credentials to access your Marsa dashboard.
+            </p>
+          </div>
+          <span class="badge rounded-pill text-bg-light border">
+            <i class="fa-regular fa-user-circle me-1 text-primary"></i>
+            Returning traveler
+          </span>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="row g-3">
+            <div class="col-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+              <label for="loginEmail" class="form-label">Email or username</label>
+              <div class="position-relative has-icon">
+                <input type="text" class="form-control" id="loginEmail"
+                       placeholder="you@example.com or username" required />
+                <i class="fa-regular fa-envelope input-icon"></i>
+              </div>
+            </div>
+
+            <div class="col-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="340">
+              <label for="loginPassword" class="form-label">Password</label>
+              <div class="position-relative has-icon">
+                <input type="password" class="form-control" id="loginPassword"
+                       placeholder="Your password" required minlength="8" />
+                <i class="fa-solid fa-lock input-icon"></i>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-between align-items-center"
+                 data-aos="fade-up" data-aos-duration="700" data-aos-delay="380">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+              <a href="reset-password.html" class="text-decoration-none text-primary small">
+                Forgot password?
+              </a>
+            </div>
+
+            <div class="col-12 mt-1" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="420">
+              <button type="submit" class="btn btn-marsa w-100">
+                <i class="fa-solid fa-right-to-bracket me-2"></i>
+                Login
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="mt-3 form-footer-text" data-aos="fade-up" data-aos-duration="700" data-aos-delay="480">
+          New to Marsa?
+          <a href="signup.html">Create an account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-white mb-3">Marsa</h4>
+          <a class="btn btn-link" href="visitor/index.html#about">About Marsa</a>
+          <a class="btn btn-link" href="visitor/index.html#islands">Islands</a>
+          <a class="btn btn-link" href="visitor/index.html#activities">Activities</a>
+          <a class="btn btn-link" href="visitor/index.html#nearby">Nearby</a>
+          <a class="btn btn-link" href="visitor/index.html#reviews">Reviews</a>
+          <a class="btn btn-link" href="visitor/index.html#contact">Contact</a>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jeddah, Saudi Arabia</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+966 5 0000 0000</p>
+          <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@marsa.sa</p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-white mb-3">Gallery</h4>
+          <div class="row g-2 pt-2">
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="visitor/img/destination-2.jpg" alt=""></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="visitor/img/destination-3.jpg" alt=""></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="visitor/img/destination-2.jpg" alt=""></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="visitor/img/destination-3.jpg" alt=""></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="visitor/img/destination-2.jpg" alt=""></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="visitor/img/destination-3.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="visitor/index.html">Marsa</a>, All Rights Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-menu">
+              <a href="visitor/index.html#home">Home</a>
+              <a href="visitor/index.html#about">About</a>
+              <a href="visitor/index.html#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Page logic -->
+  <script src="js/login.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+        html {
+            scroll-behavior: smooth;
+        }
+        .island-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            overflow: hidden;
+        }
+        .island-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .island-image {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .island-card:hover .island-image {
+            transform: scale(1.1);
+        }
+        .badge-custom {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+        }
+    

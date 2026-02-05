@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Marsa – Explore Saudi Islands</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Jeddah, Saudi Arabia</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+966 5 0000 0000</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>support@marsa.sa</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center gap-2" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light rounded-pill px-3" href="../login.html">
+                        <i class="fa fa-sign-in-alt me-1"></i> Login
+                    </a>
+                    <a class="btn btn-sm btn-primary rounded-pill px-3" href="../signup.html">
+                        <i class="fa fa-user-plus me-1"></i> Register
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div id="home" class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="#home" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-water me-3"></i>Marsa</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About Marsa</a>
+                    <a href="all-islands.html" class="nav-item nav-link">Islands</a>
+                    <a href="#activities" class="nav-item nav-link">Activities</a>
+                    <a href="#nearby" class="nav-item nav-link">Nearby</a>
+                    <a href="#reviews" class="nav-item nav-link">Reviews</a>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white mb-3 animated slideInDown">Discover Saudi Red Sea Islands</h1>
+                        <p class="fs-4 text-white mb-4 animated slideInDown">Explore Farasan, Shura, Shebara and more – book eco-friendly activities and island experiences in one place.</p>
+                        <div class="position-relative w-75 mx-auto animated slideInDown">
+                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Search islands or activities">
+                            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- Weather Widget Start -->
+    <div class="container-fluid py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h6 class="section-title bg-white text-center text-primary px-3 mb-2">Weather</h6>
+                <h5 class="mb-0">Current Weather Conditions</h5>
+                <small class="text-muted">Check weather for all Saudi Islands</small>
+            </div>
+            <div class="row g-3">
+                <!-- Farasan Islands Weather -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-cloud-sun text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-2 text-dark">Farasan Islands</h6>
+                        <div class="h4 mb-2 text-primary">28°C</div>
+                        <div class="mb-2 text-muted small">Sunny</div>
+                        <div class="text-muted" style="font-size: 0.85rem;">
+                            <i class="fa fa-wind me-1"></i>15 km/h
+                        </div>
+                    </div>
+                </div>
+                <!-- Shura Island Weather -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-sun text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-2 text-dark">Shura Island</h6>
+                        <div class="h4 mb-2 text-primary">30°C</div>
+                        <div class="mb-2 text-muted small">Clear</div>
+                        <div class="text-muted" style="font-size: 0.85rem;">
+                            <i class="fa fa-wind me-1"></i>12 km/h
+                        </div>
+                    </div>
+                </div>
+                <!-- Shebara Island Weather -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-cloud text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-2 text-dark">Shebara Island</h6>
+                        <div class="h4 mb-2 text-primary">27°C</div>
+                        <div class="mb-2 text-muted small">Partly Cloudy</div>
+                        <div class="text-muted" style="font-size: 0.85rem;">
+                            <i class="fa fa-wind me-1"></i>18 km/h
+                        </div>
+                    </div>
+                </div>
+                <!-- Sindalah Island Weather -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-sun text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-2 text-dark">Sindalah Island</h6>
+                        <div class="h4 mb-2 text-primary">29°C</div>
+                        <div class="mb-2 text-muted small">Sunny</div>
+                        <div class="text-muted" style="font-size: 0.85rem;">
+                            <i class="fa fa-wind me-1"></i>14 km/h
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Weather Widget End -->
+
+
+    <!-- About Start -->
+    <div id="about" class="container-fluid py-5 bg-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/The Red Sea EDITION.jpg" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">About Marsa</h6>
+                    <h1 class="mb-4">Welcome to <span class="text-primary">Marsa</span></h1>
+                    <p class="mb-4">Marsa is a web-based interactive platform dedicated to showcasing Saudi Arabia’s unique Red Sea islands, from Farasan and Shura to emerging regenerative tourism destinations.</p>
+                    <p class="mb-4">We connect travelers with curated island experiences, certified local operators, and eco-conscious activities. Discover snorkeling trips, boat tours, cultural walks, and more – all in a single, easy-to-use interface tailored for the Saudi islands.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Curated Red Sea islands</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Trusted local operators</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Regenerative tourism focus</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Smart, simple booking flows</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Real-time availability</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 digital support</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Destination Start -->
+    <div id="islands" class="container-fluid py-5 destination" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Islands</h6>
+                <h1 class="mb-5">Featured Saudi Islands</h1>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="island-farasan.html">
+                                <img class="img-fluid" src="img/Farasan.jpg" alt="">
+                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">New</div>
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Farasan Islands</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="island-farasan.html">
+                                <img class="img-fluid" src="img/Shura.jpg" alt="">
+                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Popular</div>
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Shura Island</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="island-farasan.html">
+                                <img class="img-fluid" src="img/Shibara.jpg" alt="">
+                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Eco</div>
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Shebara Island</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="island-farasan.html">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/Sindalah.jpg" alt="" style="object-fit: cover;">
+                        <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Coming soon</div>
+                        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Sindalah Island</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination End -->
+
+
+    <!-- Service Start -->
+    <div id="activities" class="container-fluid py-5 bg-white">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Why Marsa</h6>
+                <h1 class="mb-5">Everything for your island trip</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-water text-primary mb-4"></i>
+                            <h5>Island discovery</h5>
+                            <p>Browse Saudi Red Sea islands with rich descriptions, photos, and maps.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-ship text-primary mb-4"></i>
+                            <h5>Curated activities</h5>
+                            <p>Snorkeling, diving, boat tours, and cultural walks selected for quality.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                            <h5>Local operators</h5>
+                            <p>Connect directly with certified guides and operators on each island.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-leaf text-primary mb-4"></i>
+                            <h5>Eco-friendly focus</h5>
+                            <p>Experiences designed around regenerative tourism and marine protection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-calendar-check text-primary mb-4"></i>
+                            <h5>Smart booking</h5>
+                            <p>Check availability, prices, and group sizes before you confirm.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
+                            <h5>Stay suggestions</h5>
+                            <p>Discover handpicked stays near piers, beaches, and marine reserves.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-users text-primary mb-4"></i>
+                            <h5>Group & family trips</h5>
+                            <p>Plan trips for couples, families, or groups with flexible capacities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                            <h5>Support in Arabic & English</h5>
+                            <p>Get help with your bookings and itineraries whenever you need it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Nearby Places Start -->
+    <div id="nearby" class="container-fluid py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Nearby Islands</h6>
+                <h1 class="mb-5">Discover Saudi Islands Near You</h1>
+                <p class="text-muted mb-4">Explore beautiful Saudi Red Sea islands near your location.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Farasan Islands -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <div class="position-relative mb-3">
+                            <img src="img/Farasan.jpg" class="img-fluid rounded" alt="Farasan Islands" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary">45 km</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-water text-primary me-2"></i>
+                            <span class="badge bg-light text-dark">Island</span>
+                        </div>
+                        <h5 class="mb-2">Farasan Islands</h5>
+                        <p class="text-muted mb-3 small">Beautiful archipelago with pristine beaches and coral reefs. Perfect for snorkeling and diving.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fa fa-map-marker-alt me-1"></i>45 km away
+                            </small>
+                            <a href="island-farasan.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shura Island -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <div class="position-relative mb-3">
+                            <img src="img/Shura.jpg" class="img-fluid rounded" alt="Shura Island" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary">25 km</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-water text-primary me-2"></i>
+                            <span class="badge bg-light text-dark">Island</span>
+                        </div>
+                        <h5 class="mb-2">Shura Island</h5>
+                        <p class="text-muted mb-3 small">Popular destination for snorkeling and diving. Crystal clear waters and vibrant marine life.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fa fa-map-marker-alt me-1"></i>25 km away
+                            </small>
+                            <a href="island-farasan.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shebara Island -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <div class="position-relative mb-3">
+                            <img src="img/Shibara.jpg" class="img-fluid rounded" alt="Shebara Island" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary">35 km</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-water text-primary me-2"></i>
+                            <span class="badge bg-light text-dark">Island</span>
+                        </div>
+                        <h5 class="mb-2">Shebara Island</h5>
+                        <p class="text-muted mb-3 small">Eco-friendly island destination with pristine beaches and protected marine ecosystems. Perfect for sustainable tourism.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fa fa-map-marker-alt me-1"></i>35 km away
+                            </small>
+                            <a href="island-farasan.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sindalah Island -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <div class="position-relative mb-3">
+                            <img src="img/Sindalah.jpg" class="img-fluid rounded" alt="Sindalah Island" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary">50 km</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-water text-primary me-2"></i>
+                            <span class="badge bg-light text-dark">Island</span>
+                        </div>
+                        <h5 class="mb-2">Sindalah Island</h5>
+                        <p class="text-muted mb-3 small">Luxury island resort destination with world-class facilities and stunning Red Sea views. Coming soon.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fa fa-map-marker-alt me-1"></i>50 km away
+                            </small>
+                            <a href="island-farasan.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tiran Island -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <div class="position-relative mb-3">
+                            <img src="img/Tiran Island.jpg" class="img-fluid rounded" alt="Tiran Island" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary">60 km</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-water text-primary me-2"></i>
+                            <span class="badge bg-light text-dark">Island</span>
+                        </div>
+                        <h5 class="mb-2">Tiran Island</h5>
+                        <p class="text-muted mb-3 small">Strategic island location with rich history and exceptional diving spots. Known for its coral reefs and marine biodiversity.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fa fa-map-marker-alt me-1"></i>60 km away
+                            </small>
+                            <a href="island-farasan.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sanafir Island -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="bg-white rounded shadow-sm p-4 h-100">
+                        <div class="position-relative mb-3">
+                            <img src="img/Sanafir Island.jpg" class="img-fluid rounded" alt="Sanafir Island" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-primary">65 km</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-water text-primary me-2"></i>
+                            <span class="badge bg-light text-dark">Island</span>
+                        </div>
+                        <h5 class="mb-2">Sanafir Island</h5>
+                        <p class="text-muted mb-3 small">Remote island paradise with untouched natural beauty. Ideal for adventurous travelers seeking pristine wilderness.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fa fa-map-marker-alt me-1"></i>65 km away
+                            </small>
+                            <a href="island-farasan.html" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nearby Places End -->
+
+
+    <!-- Reviews Start -->
+    <div id="reviews" class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Reviews</h6>
+                <h1 class="mb-5">Traveler feedback on Marsa experiences</h1>
+                <p class="text-muted mb-4">Visitors can read approved reviews and ratings for islands and activities. To write your own review, you’ll need to create a Marsa account and complete a booking.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white h-100 p-4 rounded shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                <i class="fa fa-user text-dark"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-0">Family trip to Farasan</h5>
+                                <small class="text-muted">Snorkeling & boat tour</small>
+                            </div>
+                        </div>
+                        <div class="mb-2 text-warning">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-0">“Crystal clear water and very professional operator. Booking through Marsa made it easy to compare options before we traveled.”</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white h-100 p-4 rounded shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                <i class="fa fa-user text-dark"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-0">Sunset on Shura Island</h5>
+                                <small class="text-muted">Evening cruise</small>
+                            </div>
+                        </div>
+                        <div class="mb-2 text-warning">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="mb-0">“The itinerary and timings were clear on Marsa, and the operator kept everything on schedule. Highly recommended for couples.”</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-white h-100 p-4 rounded shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                <i class="fa fa-user text-dark"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-0">Diving around Shebara</h5>
+                                <small class="text-muted">Full‑day activity</small>
+                            </div>
+                        </div>
+                        <div class="mb-2 text-warning">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="mb-0">“Great safety briefing and reef preservation focus. Marsa reviews helped us choose the right operator for our skill level.”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reviews End -->
+
+
+    <!-- Promotions Start -->
+    <div class="container-fluid py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Promotions</h6>
+                    <h1 class="mb-3">Seasonal offers & island campaigns</h1>
+                    <p class="mb-3">As a visitor you can preview current and upcoming promotions on selected islands and activities. To redeem any offer, you’ll be asked to log in or create a Marsa account.</p>
+                    <ul class="mb-3">
+                        <li>Introductory experiences on newly opened islands.</li>
+                        <li>Limited‑time discounts for weekday trips.</li>
+                        <li>Special packages for families and small groups.</li>
+                    </ul>
+                    <a href="../signup.html" class="btn btn-primary rounded-pill py-2 px-4 mt-2">Register to unlock offers</a>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="position-relative overflow-hidden rounded">
+                                <img src="img/destination-2.jpg" class="img-fluid" alt="Island offer 1">
+                                <div class="bg-primary text-dark fw-bold position-absolute top-0 start-0 m-2 py-1 px-2">New</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="position-relative overflow-hidden rounded">
+                                <img src="img/destination-3.jpg" class="img-fluid" alt="Island offer 2">
+                                <div class="bg-primary text-dark fw-bold position-absolute top-0 start-0 m-2 py-1 px-2">Limited</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Promotions End -->
+
+
+    <!-- Contact Start -->
+    <div id="contact" class="container-fluid py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
+                <h1 class="mb-5">Contact Marsa</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5>Get In Touch</h5>
+                    <h6 class="mb-4">Have questions about islands, operators, or bookings? Reach out and the Marsa team will be happy to help.</h6>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Office</h5>
+                            <p class="mb-0">Jeddah, Saudi Arabia</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Mobile</h5>
+                            <p class="mb-0">+966 5 0000 0000</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-envelope-open text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Email</h5>
+                            <p class="mb-0">support@marsa.sa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.478837709!2d39.182014314928!3d21.485299885899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4ced818775%3A0x98ab2469cf49cbd!2sJeddah%2C%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1640000000000!5m2!1sen!2s"
+                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Marsa</h4>
+                    <a class="btn btn-link" href="#about">About Marsa</a>
+                    <a class="btn btn-link" href="#islands">Islands</a>
+                    <a class="btn btn-link" href="#activities">Activities</a>
+                    <a class="btn btn-link" href="#nearby">Nearby</a>
+                    <a class="btn btn-link" href="#reviews">Reviews</a>
+                    <a class="btn btn-link" href="#contact">Contact</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jeddah, Saudi Arabia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+966 5 0000 0000</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@marsa.sa</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Marsa</a>, All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
