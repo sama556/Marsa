@@ -54,7 +54,6 @@ if (resetForm) {
       return;
     }
 
-    // Here you would call your backend "reset password" API.
     showToast('Password updated successfully! You can now log in.', true);
     resetForm.reset();
     resetForm.classList.remove('was-validated');
