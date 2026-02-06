@@ -54,10 +54,13 @@ if (loginForm) {
       return;
     }
 
-    // Here you would call your backend login API.
     showToast('Logged in successfully! Redirecting...', true);
     loginForm.reset();
     loginForm.classList.remove('was-validated');
+
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1200);
   });
 }
 
