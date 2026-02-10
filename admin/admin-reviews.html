@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marsa – Admin / Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="../visitor/css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg admin-topbar shadow-sm">
+    <div class="container-fluid px-3 px-lg-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../visitor/index.html">
+        <i class="fa-solid fa-water text-info"></i>
+        <span>Marsa</span>
+        <span class="badge bg-light text-dark ms-1">Admin</span>
+      </a>
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <span class="text-white-50 small d-none d-md-inline">Signed in as <strong>admin@marsa.sa</strong></span>
+        <a href="../login.html" class="btn btn-sm btn-outline-light rounded-pill">
+          <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toast container for admin actions (reviews) -->
+  <div id="adminToastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1080;"></div>
+
+  <main class="admin-layout">
+    <div class="container-fluid">
+      <div class="row g-3 g-lg-4">
+        <aside class="col-lg-3">
+          <div class="card admin-card admin-sidebar-card">
+            <div class="card-body p-3 p-lg-4">
+              <h6 class="text-uppercase text-muted small mb-3">Admin navigation</h6>
+              <nav class="nav flex-column small admin-sidebar-nav">
+                <a class="nav-link py-2 px-0" href="admin.html">
+                  <i class="fa-solid fa-users-gear me-2"></i> Users management
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-islands.html">
+                  <i class="fa-solid fa-building-columns  me-2"></i> Islands management
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-activities.html">
+                  <i class="fa-solid fa-person-swimming me-2"></i> Activities management
+                </a>
+                
+                <a class="nav-link py-2 px-0 active" href="admin-reviews.html">
+                  <i class="fa-solid fa-star-half-stroke me-2"></i> Reviews
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-reports.html">
+                  <i class="fa-solid fa-chart-line me-2"></i> Reports &amp; statistics
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="col-lg-9">
+          <div class="row g-3 mb-4">
+            <div class="col-12">
+              <h2 class="h4 mb-1">Reviews moderation</h2>
+              
+            </div>
+          </div>
+
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-star-half-stroke"></i> Reviews
+                  </h3>
+                 
+                </div>
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-sm table-hover align-middle mb-0 small">
+                    <thead>
+                      <tr>
+                        <th>Review ID</th>
+                    
+                        <th>User ID</th>
+                        <th>Rating</th>
+                   
+                        <th>Submission date</th>
+                        <th>Status</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#401</td>
+                      
+                        <td>#3 – reem.traveler</td>
+                        <td>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                          </span>
+                          <span class="small text-muted ms-1">4.5</span>
+                        </td>
+                       
+                        <td>2026-02-16 19:40</td>
+                        <td><span class="status-pill bg-success-subtle text-success">published</span></td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalReviewView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalReviewDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#402</td>
+                    
+                        <td>#3 – reem.traveler</td>
+                        <td>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                          </span>
+                          <span class="small text-muted ms-1">4.0</span>
+                        </td>
+                     
+                        <td>2026-02-19 21:10</td>
+                        <td><span class="status-pill bg-warning-subtle text-warning">pending</span></td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalReviewView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalReviewDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#403</td>
+                   
+                        <td>#3 – reem.traveler</td>
+                        <td>
+                          <span class="text-warning">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                          </span>
+                          <span class="small text-muted ms-1">2.0</span>
+                        </td>
+                       
+                        <td>2026-02-04 10:25</td>
+                        <td><span class="status-pill bg-secondary-subtle text-secondary">hidden</span></td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalReviewView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalReviewDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- View review modal (static example) -->
+  <div class="modal fade" id="modalReviewView" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-regular fa-eye me-2 text-secondary"></i>
+            Review details – #401
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <dl class="row small mb-0">
+                <dt class="col-5">Review ID</dt><dd class="col-7">#401</dd>
+                <dt class="col-5">Booking ID</dt><dd class="col-7">#301</dd>
+                <dt class="col-5">User ID</dt><dd class="col-7">#3 – reem.traveler</dd>
+                <dt class="col-5">Rating</dt>
+                <dd class="col-7">
+                  <span class="text-warning me-1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </span>
+                  <span class="small text-muted">4.5 / 5</span>
+                </dd>
+                <dt class="col-5">Status</dt><dd class="col-7">published</dd>
+                <dt class="col-5">Submission date</dt><dd class="col-7">2026-02-16 19:40</dd>
+              </dl>
+            </div>
+            <div class="col-md-12">
+              <p class="small mb-1"><strong>Comment</strong></p>
+              <p class="small mb-2">
+                Amazing snorkeling trip, clear briefings and very safe crew. We recommend this operator for families.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete review modal (static example) -->
+  <div class="modal fade" id="modalReviewDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-regular fa-trash-can me-2 text-danger"></i>
+            Delete review
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small mb-2">
+            Static confirmation for deleting a traveler review. In a real backend this would remove or hide the review
+            from visitor-facing pages and analytics.
+          </p>
+          <ul class="small mb-0">
+            <li><strong>Review ID:</strong> #401</li>
+            <li><strong>User:</strong> #3 – reem.traveler</li>
+            <li><strong>Rating:</strong> 4.5 / 5</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="btnReviewDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Simple toast helper for reviews admin page
+    function showAdminToast(message, type) {
+      const container = document.getElementById('adminToastContainer');
+      if (!container || !window.bootstrap) return;
+
+      const toastId = 'admin-toast-' + Date.now();
+      const bgClass = type === 'error' ? 'text-bg-danger' : 'text-bg-success';
+      const icon = type === 'error' ? 'fa-circle-xmark' : 'fa-circle-check';
+
+      const html = `
+        <div id="${toastId}" class="toast align-items-center ${bgClass} border-0 mb-2" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body d-flex align-items-center gap-2">
+              <i class="fa-solid ${icon}"></i>
+              <span>${message}</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      `;
+
+      container.insertAdjacentHTML('beforeend', html);
+      const toastEl = document.getElementById(toastId);
+      const toast = new bootstrap.Toast(toastEl, { delay: 2500 });
+      toast.show();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnDelete = document.getElementById('btnReviewDelete');
+      if (btnDelete) {
+        btnDelete.addEventListener('click', function () {
+          const modalEl = document.getElementById('modalReviewDelete');
+          if (modalEl && window.bootstrap) {
+            const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+            modal.hide();
+          }
+          showAdminToast('Review deleted (static demo – no real backend).', 'success');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

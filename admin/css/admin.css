@@ -1,0 +1,89 @@
+:root {
+  --admin-navy: #26344F;
+  --admin-accent: #516B82;
+}
+
+body {
+  background: #f4f6f8;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.admin-topbar {
+  background: var(--admin-navy);
+  color: #fff;
+}
+
+.admin-topbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.admin-topbar .navbar-brand span {
+  color: #9BB0BE;
+}
+
+.admin-layout {
+  padding: 24px 16px 40px;
+  min-height: calc(100vh - 56px);
+}
+
+@media (min-width: 992px) {
+  .admin-layout {
+    padding: 32px 40px 56px;
+  }
+}
+
+.admin-section-title {
+  font-weight: 700;
+  color: var(--admin-navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.admin-section-title i {
+  color: var(--admin-accent);
+}
+
+.admin-card {
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.status-pill {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: .75rem;
+}
+
+.admin-sidebar-nav .nav-link {
+  color: #6c757d;
+  border-radius: 8px;
+  margin-bottom: 0.35rem;
+}
+
+.admin-sidebar-nav .nav-link i {
+  width: 18px;
+  text-align: center;
+}
+
+.admin-sidebar-nav .nav-link.active,
+.admin-sidebar-nav .nav-link:hover {
+  color: var(--admin-navy);
+  background-color: rgba(81,107,130,0.08);
+}
+
+.admin-sidebar-card {
+  height: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .admin-sidebar-card {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+

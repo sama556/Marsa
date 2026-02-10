@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marsa – Admin / Islands</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="../visitor/css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg admin-topbar shadow-sm">
+    <div class="container-fluid px-3 px-lg-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../visitor/index.html">
+        <i class="fa-solid fa-water text-info"></i>
+        <span>Marsa</span>
+        <span class="badge bg-light text-dark ms-1">Admin</span>
+      </a>
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <span class="text-white-50 small d-none d-md-inline">Signed in as <strong>admin@marsa.sa</strong></span>
+        <a href="../login.html" class="btn btn-sm btn-outline-light rounded-pill">
+          <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toast container for admin actions (islands) -->
+  <div id="adminToastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1080;"></div>
+
+  <main class="admin-layout">
+    <div class="container-fluid">
+      <div class="row g-3 g-lg-4">
+        <aside class="col-lg-3">
+          <div class="card admin-card admin-sidebar-card">
+            <div class="card-body p-3 p-lg-4">
+              <h6 class="text-uppercase text-muted small mb-3">Admin navigation</h6>
+              <nav class="nav flex-column small admin-sidebar-nav">
+                <a class="nav-link py-2 px-0" href="admin.html">
+                  <i class="fa-solid fa-users-gear me-2"></i> Users management
+                </a>
+                <a class="nav-link py-2 px-0 active" href="admin-islands.html">
+                  <i class="fa-solid fa-building-columns  me-2"></i> Islands management
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-activities.html">
+                  <i class="fa-solid fa-person-swimming me-2"></i> Activities management
+                </a>
+              
+                <a class="nav-link py-2 px-0" href="admin-reviews.html">
+                  <i class="fa-solid fa-star-half-stroke me-2"></i> Reviews
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-reports.html">
+                  <i class="fa-solid fa-chart-line me-2"></i> Reports &amp; statistics
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="col-lg-9">
+          <div class="row g-3 mb-4">
+            <div class="col-12">
+              <h2 class="h4 mb-1">Islands management</h2>
+              
+            </div>
+          </div>
+
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-island-tropical"></i> Islands
+                  </h3>
+                  
+                </div>
+                <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalIslandAdd">
+                  <i class="fa-solid fa-plus me-1"></i> Add island
+                </button>
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-sm align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>Island ID</th>
+                        <th>Island name</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Created at</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#101</td>
+                        <td>Farasan Islands</td>
+                        <td>16.7000</td>
+                        <td>42.1000</td>
+                        <td>2026-01-05 11:00</td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalIslandView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIslandEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIslandDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#102</td>
+                        <td>Shura Island</td>
+                        <td>21.6000</td>
+                        <td>39.0500</td>
+                        <td>2026-01-12 14:20</td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalIslandView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIslandEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIslandDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#103</td>
+                        <td>Shebara Island</td>
+                        <td>24.1500</td>
+                        <td>38.0500</td>
+                        <td>2026-01-18 09:45</td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalIslandView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIslandEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIslandDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Alerts about islands -->
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Island alerts
+                  </h3>
+                  
+                </div>
+                <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#modalAlertAdd">
+                  <i class="fa-solid fa-plus me-1"></i> Add alert
+                </button>
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-sm align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>Alert ID</th>
+                        <th>Island</th>
+                        <th>Type</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Valid until</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#A-01</td>
+                        <td>Farasan Islands</td>
+                        <td><span class="badge bg-warning text-dark">Weather</span></td>
+                        <td class="small">High winds in the afternoon – boat trips may be delayed.</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                        <td>2026-02-10</td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalAlertView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalAlertEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalAlertDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#A-02</td>
+                        <td>Shebara Island</td>
+                        <td><span class="badge bg-info text-dark">Info</span></td>
+                        <td class="small">Part of the coral reef is temporarily closed for restoration.</td>
+                        <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Draft</span></td>
+                        <td>2026-03-01</td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalAlertView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalAlertEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalAlertDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Island policies -->
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-scale-balanced"></i> Island policies
+                  </h3>
+                  
+                </div>
+                <button class="btn btn-sm btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#modalPolicyAdd">
+                  <i class="fa-solid fa-plus me-1"></i> Add policy
+                </button>
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-sm align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>Policy ID</th>
+                        <th>Island</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#P-01</td>
+                        <td>Farasan Islands</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Environment</span></td>
+                        <td class="small">No fishing inside the marine protected area.</td>
+                        <td><span class="badge bg-success">Published</span></td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalPolicyView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPolicyEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalPolicyDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#P-02</td>
+                        <td>Shura Island</td>
+                        <td><span class="badge bg-info text-dark">Access</span></td>
+                        <td class="small">Advance booking required for private marina access.</td>
+                        <td><span class="badge bg-secondary">Draft</span></td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalPolicyView">
+                              <i class="fa-regular fa-eye"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPolicyEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalPolicyDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Island CRUD modals (static examples) -->
+
+  <!-- Add island -->
+  <div class="modal fade" id="modalIslandAdd" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-solid fa-island-tropical me-2 text-primary"></i>Add island</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island name</label>
+              <input type="text" class="form-control" placeholder="e.g. Farasan Islands">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Internal code (optional)</label>
+              <input type="text" class="form-control" placeholder="e.g. FARASAN_01">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Latitude</label>
+              <input type="text" class="form-control" placeholder="16.7000">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Longitude</label>
+              <input type="text" class="form-control" placeholder="42.1000">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Short bio / description</label>
+              <textarea class="form-control" rows="3" placeholder="Describe nature, access and main attractions of the island."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Location text</label>
+              <input type="text" class="form-control" placeholder="e.g. Southern Red Sea, near Jazan">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Typical weather summary</label>
+              <input type="text" class="form-control" placeholder="Warm, sunny, light coastal breeze">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Upload island photos</label>
+              <input type="file" class="form-control" accept="image/*" multiple>
+              <div class="form-text">Static demo – files are not actually uploaded.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Video URL (optional)</label>
+              <input type="text" class="form-control" placeholder="YouTube / promo video link">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnIslandSave">Save island</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View island details (read-only) -->
+  <div class="modal fade" id="modalIslandView" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-eye me-2 text-secondary"></i>Island details – Farasan Islands</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-7">
+              <dl class="row small mb-3">
+                <dt class="col-4">Island ID</dt><dd class="col-8">#101</dd>
+                <dt class="col-4">Name</dt><dd class="col-8">Farasan Islands</dd>
+                <dt class="col-4">Location</dt><dd class="col-8">Southern Red Sea, near Jazan</dd>
+                <dt class="col-4">Lat / Long</dt><dd class="col-8">16.7000 / 42.1000</dd>
+                <dt class="col-4">Created at</dt><dd class="col-8">2026-01-05 11:00</dd>
+              </dl>
+              <p class="small mb-2"><strong>Bio</strong></p>
+              <p class="small mb-3">
+                Archipelago of coral islands known for clear waters, rich marine life and traditional villages.
+                Popular for snorkeling, diving and eco-tourism.
+              </p>
+              <p class="small mb-1"><strong>Typical weather</strong></p>
+              <p class="small mb-0">Warm, sunny days with a light sea breeze and comfortable water temperature for swimming and boat trips.</p>
+            </div>
+            <div class="col-md-5">
+              <div class="card border-0 shadow-sm mb-3">
+                <div class="ratio ratio-4x3">
+                  <img src="img/Farasan.jpg" class="img-fluid object-fit-cover" alt="Farasan Islands hero image">
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <div class="flex-fill">
+                  <div class="ratio ratio-4x3 rounded overflow-hidden">
+                    <img src="img/FarasanCoralResort.jpg" class="img-fluid object-fit-cover" alt="Farasan Islands coast">
+                  </div>
+                </div>
+                <div class="flex-fill">
+                  <div class="ratio ratio-4x3 rounded overflow-hidden">
+                    <img src="img/Sanafir Island.jpg" class="img-fluid object-fit-cover" alt="Farasan Islands activities">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit island (same fields as add, prefilled) -->
+  <div class="modal fade" id="modalIslandEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-pen-to-square me-2 text-primary"></i>Edit island – Farasan Islands</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island name</label>
+              <input type="text" class="form-control" value="Farasan Islands">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Internal code (optional)</label>
+              <input type="text" class="form-control" value="FARASAN_01">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Latitude</label>
+              <input type="text" class="form-control" value="16.7000">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Longitude</label>
+              <input type="text" class="form-control" value="42.1000">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Short bio / description</label>
+              <textarea class="form-control" rows="3">Archipelago of coral islands known for clear waters, rich marine life and traditional villages.</textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Location text</label>
+              <input type="text" class="form-control" value="Southern Red Sea, near Jazan">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Typical weather summary</label>
+              <input type="text" class="form-control" value="Warm, sunny days with light sea breeze">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Upload island photos</label>
+              <input type="file" class="form-control" accept="image/*" multiple>
+              <div class="form-text">In a real system this would replace or add to the current gallery images.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Video URL (optional)</label>
+              <input type="text" class="form-control" placeholder="https://youtu.be/example">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btnIslandSaveEdit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete island confirmation -->
+  <div class="modal fade" id="modalIslandDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-trash-can me-2 text-danger"></i>Delete island</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+          <ul class="small mb-0">
+            <li><strong>Island:</strong> Farasan Islands (#101)</li>
+            <li><strong>Impact:</strong> Activities, alerts and policies related to this island would also need review.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="btnIslandDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alert modals -->
+
+  <!-- Add alert -->
+  <div class="modal fade" id="modalAlertAdd" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-solid fa-triangle-exclamation me-2 text-warning"></i>Add island alert</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <select class="form-select">
+                <option>Farasan Islands</option>
+                <option>Shura Island</option>
+                <option>Shebara Island</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Alert type</label>
+              <select class="form-select">
+                <option>Weather</option>
+                <option>Access</option>
+                <option>Maintenance</option>
+                <option>Info</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Alert message</label>
+              <textarea class="form-control" rows="3" placeholder="E.g. High winds expected – boat trips may be delayed."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="active" selected>Active</option>
+                <option value="draft">Draft</option>
+                <option value="expired">Expired</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Valid until</label>
+              <input type="date" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning text-dark" id="btnAlertSave">Save alert</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View alert -->
+  <div class="modal fade" id="modalAlertView" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-eye me-2 text-secondary"></i>Alert details – Farasan Islands</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <dl class="row small mb-0">
+            <dt class="col-4">Alert ID</dt><dd class="col-8">#A-01</dd>
+            <dt class="col-4">Island</dt><dd class="col-8">Farasan Islands</dd>
+            <dt class="col-4">Type</dt><dd class="col-8">Weather</dd>
+            <dt class="col-4">Status</dt><dd class="col-8">Active</dd>
+            <dt class="col-4">Valid until</dt><dd class="col-8">2026-02-10</dd>
+            <dt class="col-4">Message</dt>
+            <dd class="col-8">
+              High winds in the afternoon – boat trips may be delayed.
+            </dd>
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit alert -->
+  <div class="modal fade" id="modalAlertEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-pen-to-square me-2 text-primary"></i>Edit alert – Farasan Islands</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <input type="text" class="form-control" value="Farasan Islands" readonly>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Alert type</label>
+              <select class="form-select">
+                <option selected>Weather</option>
+                <option>Access</option>
+                <option>Maintenance</option>
+                <option>Info</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Alert message</label>
+              <textarea class="form-control" rows="3">High winds in the afternoon – boat trips may be delayed.</textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="active" selected>Active</option>
+                <option value="draft">Draft</option>
+                <option value="expired">Expired</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Valid until</label>
+              <input type="date" class="form-control" value="2026-02-10">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btnAlertSaveEdit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete alert -->
+  <div class="modal fade" id="modalAlertDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-trash-can me-2 text-danger"></i>Delete alert</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <ul class="small mb-0">
+            <li><strong>Alert:</strong> #A-01 – High winds in the afternoon – boat trips may be delayed.</li>
+            <li><strong>Island:</strong> Farasan Islands</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="btnAlertDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy modals -->
+
+  <!-- Add policy -->
+  <div class="modal fade" id="modalPolicyAdd" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-solid fa-scale-balanced me-2 text-success"></i>Add island policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <select class="form-select">
+                <option>Farasan Islands</option>
+                <option>Shura Island</option>
+                <option>Shebara Island</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Category</label>
+              <select class="form-select">
+                <option>Environment</option>
+                <option>Access</option>
+                <option>Safety</option>
+                <option>Culture</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy title</label>
+              <input type="text" class="form-control" placeholder="Short rule title (e.g. No fishing in protected area)">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy text</label>
+              <textarea class="form-control" rows="3" placeholder="Explain the rule, reasoning and what visitors should do."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="published" selected>Published</option>
+                <option value="draft">Draft</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" id="btnPolicySave">Save policy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View policy -->
+  <div class="modal fade" id="modalPolicyView" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-eye me-2 text-secondary"></i>Policy details – Farasan Islands</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <dl class="row small mb-3">
+            <dt class="col-3">Policy ID</dt><dd class="col-9">#P-01</dd>
+            <dt class="col-3">Island</dt><dd class="col-9">Farasan Islands</dd>
+            <dt class="col-3">Category</dt><dd class="col-9">Environment</dd>
+            <dt class="col-3">Status</dt><dd class="col-9">Published</dd>
+          </dl>
+          <p class="small mb-1"><strong>Title</strong></p>
+          <p class="small mb-3">No fishing inside the marine protected area.</p>
+          <p class="small mb-1"><strong>Policy text</strong></p>
+          <p class="small mb-0">
+            To protect coral reefs and marine life, fishing is not allowed inside the designated protected zone around
+            Farasan Islands. Visitors are requested to follow all signage and guidance from local authorities and tour operators.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit policy -->
+  <div class="modal fade" id="modalPolicyEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-pen-to-square me-2 text-primary"></i>Edit policy – Farasan Islands</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <input type="text" class="form-control" value="Farasan Islands" readonly>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Category</label>
+              <select class="form-select">
+                <option selected>Environment</option>
+                <option>Access</option>
+                <option>Safety</option>
+                <option>Culture</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy title</label>
+              <input type="text" class="form-control" value="No fishing inside the marine protected area.">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy text</label>
+              <textarea class="form-control" rows="3">To protect coral reefs and marine life, fishing is not allowed inside the designated protected zone around Farasan Islands.</textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="published" selected>Published</option>
+                <option value="draft">Draft</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btnPolicySaveEdit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete policy -->
+  <div class="modal fade" id="modalPolicyDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa-regular fa-trash-can me-2 text-danger"></i>Delete policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <ul class="small mb-0">
+            <li><strong>Policy:</strong> #P-01 – No fishing inside the marine protected area.</li>
+            <li><strong>Island:</strong> Farasan Islands</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="btnPolicyDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/islands.js"></script>
+
+
+</body>
+</html>
+
