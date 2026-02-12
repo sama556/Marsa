@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marsa – Admin / Farasan Island details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="../visitor/css/style.css">
+
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg admin-topbar shadow-sm">
+    <div class="container-fluid px-3 px-lg-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../visitor/index.html">
+        <i class="fa-solid fa-water text-info"></i>
+        <span>Marsa</span>
+        <span class="badge bg-light text-dark ms-1">Admin</span>
+      </a>
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <span class="text-white-50 small d-none d-md-inline">Signed in as <strong>admin@marsa.sa</strong></span>
+        <a href="../login.html" class="btn btn-sm btn-outline-light rounded-pill">
+          <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toast container for island detail actions -->
+  <div id="adminToastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1080;"></div>
+
+  <main class="admin-layout">
+    <div class="container-fluid">
+      <div class="row g-3 g-lg-4">
+        <aside class="col-lg-3">
+          <div class="card admin-card admin-sidebar-card">
+            <div class="card-body p-3 p-lg-4">
+              <h6 class="text-uppercase text-muted small mb-3">Admin navigation</h6>
+              <nav class="nav flex-column small admin-sidebar-nav">
+                <a class="nav-link py-2 px-0" href="admin.html">
+                  <i class="fa-solid fa-users-gear me-2"></i> Users management
+                </a>
+                <a class="nav-link py-2 px-0 active" href="admin-islands.html">
+                  <i class="fa-solid fa-building-columns me-2"></i> Islands management
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-activities.html">
+                  <i class="fa-solid fa-person-swimming me-2"></i> Activities management
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-reviews.html">
+                  <i class="fa-solid fa-star-half-stroke me-2"></i> Reviews
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-reports.html">
+                  <i class="fa-solid fa-chart-line me-2"></i> Reports &amp; statistics
+                </a>
+                <a class="nav-link py-2 px-0" href="admin-complaints.html">
+                  <i class="fa-solid fa-message me-2"></i> Complaints &amp; suggestions
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <div class="col-lg-9">
+          <div class="row g-3 mb-4">
+            <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <div>
+                <h2 class="h4 mb-1">Island details – Farasan Islands</h2>
+                
+              </div>
+              <a href="admin-islands.html" class="btn btn-sm btn-outline-secondary">
+                <i class="fa-solid fa-arrow-left me-1"></i> Back to islands
+              </a>
+            </div>
+          </div>
+
+          <!-- Island core information -->
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-island-tropical"></i> Core information
+                  </h3>
+                 
+                </div>
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <dl class="row small mb-0">
+                      <dt class="col-5">Island ID</dt><dd class="col-7">#101</dd>
+                     
+                      <dt class="col-5">Name (EN)</dt><dd class="col-7">Farasan Islands</dd>
+                      <dt class="col-5">Latitude</dt><dd class="col-7">16.7000</dd>
+                      <dt class="col-5">Longitude</dt><dd class="col-7">42.1000</dd>
+                      <dt class="col-5">Created at</dt><dd class="col-7">2026-01-05 11:00</dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="small mb-1"><strong>Description (EN)</strong></p>
+                    <p class="small mb-2">
+                      Archipelago of coral islands known for clear waters, rich marine life and traditional villages.
+                      Popular for snorkeling, diving and eco-tourism.
+                    </p>
+                    
+                    <p class="small mb-1"><strong>Map link</strong></p>
+                    <p class="small mb-0">
+                      <a href="https://maps.google.com/?q=16.7,42.1" target="_blank">https://maps.google.com/?q=16.7,42.1</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Related alerts -->
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Related alerts
+                  </h3>
+                 </div>
+               
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-sm table-hover align-middle mb-0 small text-center">
+                    <thead>
+                      <tr>
+                        <th>Alert ID</th>
+                        <th>Type</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Valid until</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#A-01</td>
+                        <td><span class="badge bg-warning text-dark">Weather</span></td>
+                        <td class="small">High winds in the afternoon – boat trips may be delayed.</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
+                        <td>2026-02-10</td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalAlertEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalAlertDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Related policies -->
+          <section class="mb-4">
+            <div class="card admin-card">
+              <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="admin-section-title mb-0">
+                    <i class="fa-solid fa-scale-balanced"></i> Related policies
+                  </h3>
+                 
+                </div>
+                
+              </div>
+              <div class="card-body p-3 p-lg-4">
+                <div class="table-responsive">
+                  <table class="table table-sm table-hover align-middle mb-0 small text-center">
+                    <thead>
+                      <tr>
+                        <th>Policy ID</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#P-01</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Environment</span></td>
+                        <td class="small">No fishing inside the marine protected area.</td>
+                        <td><span class="badge bg-success">Published</span></td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPolicyEdit">
+                              <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalPolicyDelete">
+                              <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Static modals for editing / deleting alerts and policies -->
+
+  <!-- Edit alert modal -->
+  <div class="modal fade" id="modalAlertEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-regular fa-pen-to-square me-2 text-primary"></i>
+            Edit alert – #A-01 (Farasan Islands)
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3 small">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <input type="text" class="form-control" value="Farasan Islands" readonly>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Alert type</label>
+              <select class="form-select">
+                <option selected>Weather</option>
+                <option>Access</option>
+                <option>Maintenance</option>
+                <option>Info</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Alert message</label>
+              <textarea class="form-control" rows="3">High winds in the afternoon – boat trips may be delayed.</textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="active" selected>Active</option>
+                <option value="draft">Draft</option>
+                <option value="expired">Expired</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Valid until</label>
+              <input type="date" class="form-control" value="2026-02-10">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btnIslandAlertEdit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete alert modal -->
+  <div class="modal fade" id="modalAlertDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-regular fa-trash-can me-2 text-danger"></i>
+            Delete alert – #A-01
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+          <ul class="small mb-0">
+            <li><strong>Island:</strong> Farasan Islands (#101)</li>
+            <li><strong>Alert type:</strong> Weather</li>
+            <li><strong>Message:</strong> High winds in the afternoon – boat trips may be delayed.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="btnIslandAlertDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add policy modal (static example) -->
+  <div class="modal fade" id="modalPolicyAdd" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-solid fa-scale-balanced me-2 text-success"></i>
+            Add policy – Farasan Islands
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body small">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <input type="text" class="form-control" value="Farasan Islands" readonly>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Category</label>
+              <select class="form-select">
+                <option>Environment</option>
+                <option>Access</option>
+                <option>Safety</option>
+                <option>Culture</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy title</label>
+              <input type="text" class="form-control" placeholder="Short rule title">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy text</label>
+              <textarea class="form-control" rows="3" placeholder="Explain the rule and what visitors should do."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="published" selected>Published</option>
+                <option value="draft">Draft</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" id="btnIslandPolicyAdd">Save policy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit policy modal -->
+  <div class="modal fade" id="modalPolicyEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-regular fa-pen-to-square me-2 text-primary"></i>
+            Edit policy – #P-01 (Farasan Islands)
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body small">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Island</label>
+              <input type="text" class="form-control" value="Farasan Islands" readonly>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Category</label>
+              <select class="form-select">
+                <option selected>Environment</option>
+                <option>Access</option>
+                <option>Safety</option>
+                <option>Culture</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy title</label>
+              <input type="text" class="form-control" value="No fishing inside the marine protected area.">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Policy text</label>
+              <textarea class="form-control" rows="3">To protect coral reefs and marine life, fishing is not allowed inside the designated protected zone around Farasan Islands.</textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Status</label>
+              <select class="form-select">
+                <option value="published" selected>Published</option>
+                <option value="draft">Draft</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btnIslandPolicyEdit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete policy modal -->
+  <div class="modal fade" id="modalPolicyDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fa-regular fa-trash-can me-2 text-danger"></i>
+            Delete policy – #P-01
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small mb-2">
+            This is a static confirmation for deleting the policy. In a real system, removing the policy would hide it
+            from the island detail page for visitors.
+          </p>
+          <ul class="small mb-0">
+            <li><strong>Island:</strong> Farasan Islands (#101)</li>
+            <li><strong>Policy:</strong> No fishing inside the marine protected area.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="btnIslandPolicyDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/island-detailes.js"></script>
+  
+</body>
+</html>

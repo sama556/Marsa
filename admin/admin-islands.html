@@ -54,6 +54,9 @@
                 <a class="nav-link py-2 px-0" href="admin-reports.html">
                   <i class="fa-solid fa-chart-line me-2"></i> Reports &amp; statistics
                 </a>
+                <a class="nav-link py-2 px-0 " href="admin-complaints.html">
+                  <i class="fa-solid fa-message me-2"></i> Complaints &amp; suggestions
+                </a>
               </nav>
             </div>
           </div>
@@ -82,13 +85,13 @@
               </div>
               <div class="card-body p-3 p-lg-4">
                 <div class="table-responsive">
-                  <table class="table table-sm align-middle mb-0">
+                  <table class="table table-sm table-hover align-middle mb-0 small text-center">
                     <thead>
                       <tr>
                         <th>Island ID</th>
                         <th>Island name</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
+                        <th>Location</th>
+                        <th>Map link</th>
                         <th>Created at</th>
                         <th class="text-end">Actions</th>
                       </tr>
@@ -97,16 +100,22 @@
                       <tr>
                         <td>#101</td>
                         <td>Farasan Islands</td>
-                        <td>16.7000</td>
-                        <td>42.1000</td>
+                        <td>Southern Red Sea, near Jazan</td>
+                        <td><a href="https://maps.google.com/?q=16.7,42.1" class="small text-decoration-underline" target="_blank">View on map</a></td>
                         <td>2026-01-05 11:00</td>
                         <td class="text-end">
                           <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalIslandView">
+                            <a href="admin-island-farasan.html" class="btn btn-outline-secondary">
                               <i class="fa-regular fa-eye"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIslandEdit">
                               <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalAlertAdd">
+                              <i class="fa-solid fa-triangle-exclamation"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalPolicyAdd">
+                              <i class="fa-solid fa-scale-balanced"></i>
                             </button>
                             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIslandDelete">
                               <i class="fa-regular fa-trash-can"></i>
@@ -117,16 +126,22 @@
                       <tr>
                         <td>#102</td>
                         <td>Shura Island</td>
-                        <td>21.6000</td>
-                        <td>39.0500</td>
+                        <td>Red Sea, near NEOM / Shura Island area</td>
+                        <td><a href="https://maps.google.com/?q=21.6,39.05" class="small text-decoration-underline" target="_blank">View on map</a></td>
                         <td>2026-01-12 14:20</td>
                         <td class="text-end">
                           <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalIslandView">
+                            <a href="admin-island-farasan.html" class="btn btn-outline-secondary">
                               <i class="fa-regular fa-eye"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIslandEdit">
                               <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalAlertAdd">
+                              <i class="fa-solid fa-triangle-exclamation"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalPolicyAdd">
+                              <i class="fa-solid fa-scale-balanced"></i>
                             </button>
                             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIslandDelete">
                               <i class="fa-regular fa-trash-can"></i>
@@ -137,16 +152,22 @@
                       <tr>
                         <td>#103</td>
                         <td>Shebara Island</td>
-                        <td>24.1500</td>
-                        <td>38.0500</td>
+                        <td>Red Sea, eco resort area off the Saudi coast</td>
+                        <td><a href="https://maps.google.com/?q=24.15,38.05" class="small text-decoration-underline" target="_blank">View on map</a></td>
                         <td>2026-01-18 09:45</td>
                         <td class="text-end">
                           <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalIslandView">
+                            <a href="admin-island-farasan.html" class="btn btn-outline-secondary">
                               <i class="fa-regular fa-eye"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalIslandEdit">
                               <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalAlertAdd">
+                              <i class="fa-solid fa-triangle-exclamation"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalPolicyAdd">
+                              <i class="fa-solid fa-scale-balanced"></i>
                             </button>
                             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIslandDelete">
                               <i class="fa-regular fa-trash-can"></i>
@@ -161,158 +182,6 @@
             </div>
           </section>
 
-          <!-- Alerts about islands -->
-          <section class="mb-4">
-            <div class="card admin-card">
-              <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                <div>
-                  <h3 class="admin-section-title mb-0">
-                    <i class="fa-solid fa-triangle-exclamation"></i> Island alerts
-                  </h3>
-                  
-                </div>
-                <button class="btn btn-sm btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#modalAlertAdd">
-                  <i class="fa-solid fa-plus me-1"></i> Add alert
-                </button>
-              </div>
-              <div class="card-body p-3 p-lg-4">
-                <div class="table-responsive">
-                  <table class="table table-sm align-middle mb-0">
-                    <thead>
-                      <tr>
-                        <th>Alert ID</th>
-                        <th>Island</th>
-                        <th>Type</th>
-                        <th>Message</th>
-                        <th>Status</th>
-                        <th>Valid until</th>
-                        <th class="text-end">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>#A-01</td>
-                        <td>Farasan Islands</td>
-                        <td><span class="badge bg-warning text-dark">Weather</span></td>
-                        <td class="small">High winds in the afternoon – boat trips may be delayed.</td>
-                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Active</span></td>
-                        <td>2026-02-10</td>
-                        <td class="text-end">
-                          <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalAlertView">
-                              <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalAlertEdit">
-                              <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalAlertDelete">
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>#A-02</td>
-                        <td>Shebara Island</td>
-                        <td><span class="badge bg-info text-dark">Info</span></td>
-                        <td class="small">Part of the coral reef is temporarily closed for restoration.</td>
-                        <td><span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Draft</span></td>
-                        <td>2026-03-01</td>
-                        <td class="text-end">
-                          <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalAlertView">
-                              <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalAlertEdit">
-                              <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalAlertDelete">
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Island policies -->
-          <section class="mb-4">
-            <div class="card admin-card">
-              <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                <div>
-                  <h3 class="admin-section-title mb-0">
-                    <i class="fa-solid fa-scale-balanced"></i> Island policies
-                  </h3>
-                  
-                </div>
-                <button class="btn btn-sm btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#modalPolicyAdd">
-                  <i class="fa-solid fa-plus me-1"></i> Add policy
-                </button>
-              </div>
-              <div class="card-body p-3 p-lg-4">
-                <div class="table-responsive">
-                  <table class="table table-sm align-middle mb-0">
-                    <thead>
-                      <tr>
-                        <th>Policy ID</th>
-                        <th>Island</th>
-                        <th>Category</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th class="text-end">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>#P-01</td>
-                        <td>Farasan Islands</td>
-                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">Environment</span></td>
-                        <td class="small">No fishing inside the marine protected area.</td>
-                        <td><span class="badge bg-success">Published</span></td>
-                        <td class="text-end">
-                          <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalPolicyView">
-                              <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPolicyEdit">
-                              <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalPolicyDelete">
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>#P-02</td>
-                        <td>Shura Island</td>
-                        <td><span class="badge bg-info text-dark">Access</span></td>
-                        <td class="small">Advance booking required for private marina access.</td>
-                        <td><span class="badge bg-secondary">Draft</span></td>
-                        <td class="text-end">
-                          <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalPolicyView">
-                              <i class="fa-regular fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPolicyEdit">
-                              <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalPolicyDelete">
-                              <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
     </div>
@@ -339,14 +208,6 @@
               <label class="form-label">Internal code (optional)</label>
               <input type="text" class="form-control" placeholder="e.g. FARASAN_01">
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Latitude</label>
-              <input type="text" class="form-control" placeholder="16.7000">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Longitude</label>
-              <input type="text" class="form-control" placeholder="42.1000">
-            </div>
             <div class="col-12">
               <label class="form-label">Short bio / description</label>
               <textarea class="form-control" rows="3" placeholder="Describe nature, access and main attractions of the island."></textarea>
@@ -356,13 +217,16 @@
               <input type="text" class="form-control" placeholder="e.g. Southern Red Sea, near Jazan">
             </div>
             <div class="col-md-6">
+              <label class="form-label">Location map link </label>
+              <input type="text" class="form-control" placeholder="https://maps.google.com/?q=...">
+            </div>
+            <div class="col-md-6">
               <label class="form-label">Typical weather summary</label>
               <input type="text" class="form-control" placeholder="Warm, sunny, light coastal breeze">
             </div>
             <div class="col-md-6">
               <label class="form-label">Upload island photos</label>
               <input type="file" class="form-control" accept="image/*" multiple>
-              <div class="form-text">Static demo – files are not actually uploaded.</div>
             </div>
             <div class="col-md-6">
               <label class="form-label">Video URL (optional)</label>
@@ -393,7 +257,8 @@
                 <dt class="col-4">Island ID</dt><dd class="col-8">#101</dd>
                 <dt class="col-4">Name</dt><dd class="col-8">Farasan Islands</dd>
                 <dt class="col-4">Location</dt><dd class="col-8">Southern Red Sea, near Jazan</dd>
-                <dt class="col-4">Lat / Long</dt><dd class="col-8">16.7000 / 42.1000</dd>
+                <dt class="col-4">Details link</dt><dd class="col-8">/visitor/island-farasan.html</dd>
+                <dt class="col-4">Map link</dt><dd class="col-8">https://maps.google.com/?q=16.7,42.1</dd>
                 <dt class="col-4">Created at</dt><dd class="col-8">2026-01-05 11:00</dd>
               </dl>
               <p class="small mb-2"><strong>Bio</strong></p>
@@ -451,14 +316,6 @@
               <label class="form-label">Internal code (optional)</label>
               <input type="text" class="form-control" value="FARASAN_01">
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Latitude</label>
-              <input type="text" class="form-control" value="16.7000">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Longitude</label>
-              <input type="text" class="form-control" value="42.1000">
-            </div>
             <div class="col-12">
               <label class="form-label">Short bio / description</label>
               <textarea class="form-control" rows="3">Archipelago of coral islands known for clear waters, rich marine life and traditional villages.</textarea>
@@ -468,13 +325,16 @@
               <input type="text" class="form-control" value="Southern Red Sea, near Jazan">
             </div>
             <div class="col-md-6">
+              <label class="form-label">Location map link </label>
+              <input type="text" class="form-control" value="https://maps.google.com/?q=16.7,42.1">
+            </div>
+            <div class="col-md-6">
               <label class="form-label">Typical weather summary</label>
               <input type="text" class="form-control" value="Warm, sunny days with light sea breeze">
             </div>
             <div class="col-md-6">
               <label class="form-label">Upload island photos</label>
               <input type="file" class="form-control" accept="image/*" multiple>
-              <div class="form-text">In a real system this would replace or add to the current gallery images.</div>
             </div>
             <div class="col-md-6">
               <label class="form-label">Video URL (optional)</label>
