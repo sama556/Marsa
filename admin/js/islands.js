@@ -1,5 +1,5 @@
 
-  
+
 function showAdminToast(message, type) {
   const container = document.getElementById('adminToastContainer');
   if (!container || !window.bootstrap) return;
@@ -54,4 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
   wireButton('btnPolicySave', 'modalPolicyAdd', 'Policy saved .');
   wireButton('btnPolicySaveEdit', 'modalPolicyEdit', 'Policy changes saved');
   wireButton('btnPolicyDelete', 'modalPolicyDelete', 'Policy deleted .');
+
+  // Initialize tooltips
+  const tooltipTriggerList = document.querySelectorAll('.t-tooltip');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 });

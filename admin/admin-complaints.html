@@ -291,24 +291,26 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="mb-3">
-            <label class="form-label">To</label>
-            <input type="text" class="form-control" value="reem.traveler &lt;reem@example.com&gt;" readonly>
+          <!-- Ticket Details -->
+          <div class="card bg-light border-0 mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="badge bg-danger-subtle text-danger border border-danger-subtle">Complaint #C-001</span>
+                <small class="text-muted">2026-02-18 09:30</small>
+              </div>
+              <h6 class="card-title fw-bold mb-1">Cancellation policy for bad weather</h6>
+              <p class="card-text small text-muted mb-2">From: <strong>reem.traveler</strong></p>
+              <p class="card-text small bg-white p-2 rounded border">
+                Our trip was cancelled due to strong winds. We understand the safety reasons, but we would like clearer
+                information on refunds and how to rebook another date.
+              </p>
+            </div>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Subject</label>
-            <input type="text" class="form-control" value="[Marsa] About your complaint #C-001">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea class="form-control" rows="5">Dear Reem,
 
-Thank you for contacting Marsa about your trip.
-
-This is a static example reply. In the real platform, an operator would explain the weather cancellation policy, confirm any refund, and propose alternative dates.
-
-Best regards,
-Marsa Support Team</textarea>
+          <!-- Answer Input -->
+          <div class="mb-0">
+            <label class="form-label fw-bold">Answer</label>
+            <textarea class="form-control" rows="5" placeholder="Type your reply here..."></textarea>
           </div>
         </div>
         <div class="modal-footer">
