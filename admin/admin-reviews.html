@@ -252,10 +252,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p class="small mb-2">
-            Static confirmation for deleting a traveler review. In a real backend this would remove or hide the review
-            from visitor-facing pages and analytics.
-          </p>
+          
           <ul class="small mb-0">
             <li><strong>Review ID:</strong> #401</li>
             <li><strong>User:</strong> #3 – reem.traveler</li>
@@ -309,7 +306,7 @@
             const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
             modal.hide();
           }
-          showAdminToast('Review deleted (static demo – no real backend).', 'success');
+          showAdminToast('Review deleted ', 'success');
         });
       }
     });

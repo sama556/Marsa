@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
         modal.hide();
       }
-      showAdminToast('Operator saved (static demo – no real backend).', 'success');
+      showAdminToast('Operator saved ', 'success');
     });
   }
 

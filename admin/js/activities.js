@@ -35,7 +35,7 @@
             const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
             modal.hide();
           }
-          showAdminToast('Activity deleted (static demo – no real backend).', 'success');
+          showAdminToast('Activity deleted ', 'success');
         });
       }
     });

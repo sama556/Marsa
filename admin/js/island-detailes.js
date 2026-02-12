@@ -45,7 +45,7 @@
       wireModalButton('btnIslandAlertDelete', 'modalAlertDelete', 'Alert deleted .');
 
       // Policies
-      wireModalButton('btnIslandPolicyAdd', 'modalPolicyAdd', 'Policy saved .');
+
       wireModalButton('btnIslandPolicyEdit', 'modalPolicyEdit', 'Policy changes saved .');
       wireModalButton('btnIslandPolicyDelete', 'modalPolicyDelete', 'Policy deleted .');
     });
