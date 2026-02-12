@@ -65,4 +65,21 @@ document.addEventListener('DOMContentLoaded', function () {
       showAdminToast('Operator status changed successfully', 'success');
     });
   }
+
+  // Toggle password visibility
+  const btnTogglePassword = document.getElementById('btnTogglePassword');
+  const passwordInput = document.getElementById('adminNewUserPassword');
+
+  if (btnTogglePassword && passwordInput) {
+    btnTogglePassword.addEventListener('click', function () {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      
+      const icon = this.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+      }
+    });
+  }
 });

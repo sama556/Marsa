@@ -1,5 +1,10 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Global defaults for Chart.js matching Bootstrap theme
+  const fontFamily = window.getComputedStyle(document.body).fontFamily;
+  Chart.defaults.font.family = fontFamily || 'system-ui, sans-serif';
+  Chart.defaults.color = '#6c757d';
+
   // Export button (static demo)
   const btnExport = document.getElementById('btnExportReports');
   if (btnExport) {
@@ -9,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (typeof Chart === 'undefined') {
-   
+
     return;
   }
 
@@ -25,20 +30,44 @@ document.addEventListener('DOMContentLoaded', function () {
             label: 'Base price (SAR)',
             data: [350, 420, 950],
             backgroundColor: ['#0d6efd', '#0dcaf0', '#198754'],
-            borderRadius: 4
+
+            borderRadius: 4,
+            maxBarThickness: 40
           }
         ]
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false }
         },
         scales: {
-          x: { ticks: { font: { size: 10 } } },
+          x: {
+            ticks: { font: { size: 11 } },
+            grid: { display: false }
+          },
           y: {
             beginAtZero: true,
-            ticks: { stepSize: 200 }
+            ticks: {
+              stepSize: 200,
+              callback: function (value) { return value + ' SAR'; }
+            },
+            grid: {
+              color: '#e9ecef',
+              borderDash: [5, 5]
+            },
+            border: { display: false }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return context.dataset.label + ': ' + context.raw + ' SAR';
+              }
+            }
           }
         }
       }
@@ -62,13 +91,14 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
-            position: 'bottom',
-            labels: { boxWidth: 12, font: { size: 10 } }
+            position: 'right',
+            labels: { boxWidth: 12, font: { size: 11 } }
           }
         },
-        cutout: '60%'
+        cutout: '70%'
       }
     });
   }
@@ -84,22 +114,38 @@ document.addEventListener('DOMContentLoaded', function () {
           {
             label: 'Rating (/5)',
             data: [4.5, 4.0, 2.0],
-            backgroundColor: '#ffc107',
-            borderRadius: 4
+            // Semantic colors based on rating
+            backgroundColor: context => {
+              const value = context.raw;
+              if (value >= 4.0) return '#198754'; // Success (Green)
+              if (value >= 2.5) return '#ffc107'; // Warning (Yellow)
+              return '#dc3545'; // Danger (Red)
+            },
+            borderRadius: 4,
+            maxBarThickness: 40
           }
         ]
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false }
         },
         scales: {
-          x: { ticks: { font: { size: 10 } } },
+          x: {
+            ticks: { font: { size: 11 } },
+            grid: { display: false }
+          },
           y: {
             beginAtZero: true,
             max: 5,
-            ticks: { stepSize: 1 }
+            ticks: { stepSize: 1 },
+            grid: {
+              color: '#e9ecef',
+              borderDash: [5, 5]
+            },
+            border: { display: false }
           }
         }
       }
