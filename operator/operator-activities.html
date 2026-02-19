@@ -14,8 +14,8 @@
   <nav class="navbar navbar-expand-lg admin-topbar shadow-sm">
     <div class="container-fluid px-3 px-lg-4">
       <a class="navbar-brand d-flex align-items-center gap-2" href="../visitor/index.html">
-        <i class="fa-solid fa-water text-info"></i>
-        <span>Marsa</span>
+        <img src="img/logo-white (1).png" alt="Marsa operator logo"
+             class="rounded-1" style="height: 80px; width: auto;">
         <span class="badge bg-light text-dark ms-1">Operator</span>
       </a>
       <div class="ms-auto d-flex align-items-center gap-2">
@@ -69,7 +69,7 @@
                   <h3 class="admin-section-title mb-0">
                     <i class="fa-solid fa-person-swimming"></i> Activities list
                   </h3>
-                  
+                 
                 </div>
                 <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal"
                   data-bs-target="#modalActivityAdd">
@@ -77,12 +77,42 @@
                 </button>
               </div>
               <div class="card-body p-3 p-lg-4">
+                <form class="row g-2 g-md-3 align-items-end mb-3 small">
+                  <div class="col-md-4">
+                    <label for="filterIsland" class="form-label mb-1">Filter by island</label>
+                    <select id="filterIsland" class="form-select form-select-sm">
+                      <option value="">All islands</option>
+                      <option value="Farasan Islands">Farasan Islands</option>
+                      <option value="Shura Island">Shura Island</option>
+                      <option value="Shebara Island">Shebara Island</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="filterKind" class="form-label mb-1">Filter by kind</label>
+                    <select id="filterKind" class="form-select form-select-sm">
+                      <option value="">All kinds</option>
+                      <option value="Activity">Activity</option>
+                      <option value="Place">Place</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="searchActivity" class="form-label mb-1">Search by name</label>
+                    <input id="searchActivity" type="search" class="form-control form-control-sm"
+                      placeholder="Type to search activities...">
+                  </div>
+                  <div class="col-md-1 d-none d-md-block">
+                    <button type="button" id="btnClearFilters" class="btn btn-outline-secondary btn-sm w-100">
+                      Clear
+                    </button>
+                  </div>
+                </form>
                 <div class="table-responsive">
-                  <table class="table table-sm table-hover align-middle mb-0 small text-center">
+                  <table id="activitiesTable" class="table table-sm table-hover align-middle mb-0 small text-center">
                     <thead>
                       <tr>
                         <th>Activity ID</th>
                         <th>Island</th>
+                        <th>Kind</th>
                         <th>Operator</th>
                         <th>Name (EN)</th>
                         <th class="text-end">Base price</th>
@@ -92,10 +122,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr data-island="Farasan Islands" data-kind="Activity">
                         <td>201</td>
-                        <td>Farasan Islands </td>
-                        <td>farasan_guide </td>
+                        <td>Farasan Islands</td>
+                        <td>Activity</td>
+                        <td>farasan_guide</td>
                         <td>Snorkeling reef tour</td>
                         <td class="text-end">350</td>
                         <td class="text-end">12</td>
@@ -117,10 +148,11 @@
                           </div>
                         </td>
                       </tr>
-                      <tr>
+                      <tr data-island="Shura Island" data-kind="Activity">
                         <td>202</td>
-                        <td>Shura Island </td>
-                        <td>farasan_guide </td>
+                        <td>Shura Island</td>
+                        <td>Activity</td>
+                        <td>farasan_guide</td>
                         <td>Sunset boat cruise</td>
                         <td class="text-end">420</td>
                         <td class="text-end">8</td>
@@ -142,10 +174,11 @@
                           </div>
                         </td>
                       </tr>
-                      <tr>
+                      <tr data-island="Shebara Island" data-kind="Place">
                         <td>203</td>
-                        <td>Shebara Island </td>
-                        <td>farasan_guide </td>
+                        <td>Shebara Island</td>
+                        <td>Place</td>
+                        <td>farasan_guide</td>
                         <td>Full-day diving trip</td>
                         <td class="text-end">950</td>
                         <td class="text-end">6</td>
@@ -234,7 +267,7 @@
                     alt="Activity photo 1" style="height: 120px; object-fit: cover; width: 100%;">
                 </div>
                 <div class="col-6">
-                  <img src="img/Al-Wajh Island.jpg" class="img-fluid rounded"
+                  <img src="img/FarasanCoralResort.jpg" class="img-fluid rounded"
                     alt="Activity photo 2" style="height: 120px; object-fit: cover; width: 100%;">
                 </div>
               </div>
@@ -276,20 +309,24 @@
               <input type="text" class="form-control" value="farasan_guide" readonly>
             </div>
             <div class="col-md-6">
-              <label class="form-label">Name (Arabic)</label>
-              <input type="text" class="form-control" placeholder="مثال: رحلة غوص بالشعاب المرجانية">
+              <label class="form-label">Name (EN)</label>
+              <input type="text" class="form-control" placeholder="Snorkeling reef tour">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Name (English)</label>
-              <input type="text" class="form-control" placeholder="e.g. Snorkeling reef tour">
+              <label class="form-label">Activity kind</label>
+              <select class="form-select">
+                <option value="" selected>Select kind</option>
+                <option value="Activity">Activity</option>
+                <option value="Place">Place</option>
+              </select>
             </div>
             <div class="col-md-6">
               <label class="form-label">Activity type</label>
-              <input type="text" class="form-control" placeholder="e.g. Snorkeling boat trip">
+              <input type="text" class="form-control" placeholder="Snorkeling boat trip">
             </div>
             <div class="col-md-6">
               <label class="form-label">Location (city / area)</label>
-              <input type="text" class="form-control" placeholder="e.g. Farasan Islands, Southern Red Sea">
+              <input type="text" class="form-control" placeholder="Farasan Islands, Southern Red Sea">
             </div>
             <div class="col-12">
               <label class="form-label">Route (go &amp; return)</label>
@@ -316,11 +353,7 @@
               <input type="date" class="form-control">
             </div>
             <div class="col-12">
-              <label class="form-label">Description (Arabic)</label>
-              <textarea class="form-control" rows="2" placeholder="وصف عربي للنشاط."></textarea>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Description (English)</label>
+              <label class="form-label">Description (EN)</label>
               <textarea class="form-control" rows="2"
                 placeholder="Short English description of the activity."></textarea>
             </div>
@@ -373,12 +406,16 @@
               <input type="text" class="form-control" value="farasan_guide" readonly>
             </div>
             <div class="col-md-6">
-              <label class="form-label">Name (Arabic)</label>
-              <input type="text" class="form-control" value="رحلة غوص بالشعاب المرجانية">
+              <label class="form-label">Name (EN)</label>
+              <input type="text" class="form-control" value="Snorkeling reef tour">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Name (English)</label>
-              <input type="text" class="form-control" value="Snorkeling reef tour">
+              <label class="form-label">Activity kind</label>
+              <select class="form-select">
+                <option value="">Select kind</option>
+                <option value="Activity" selected>Activity</option>
+                <option value="Place">Place</option>
+              </select>
             </div>
             <div class="col-md-6">
               <label class="form-label">Activity type</label>
@@ -413,11 +450,7 @@
               <input type="date" class="form-control" value="2026-04-30">
             </div>
             <div class="col-12">
-              <label class="form-label">Description (Arabic)</label>
-              <textarea class="form-control" rows="2">وصف عربي تجريبي لنشاط الغوص السطحي.</textarea>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Description (English)</label>
+              <label class="form-label">Description (EN)</label>
               <textarea class="form-control" rows="2">Half-day snorkeling trip to a protected coral reef near Farasan Islands.</textarea>
             </div>
             <div class="col-md-6">
