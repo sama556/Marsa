@@ -1,0 +1,403 @@
+/********** Template CSS **********/
+:root {
+    --primary: #516B82;
+    --secondary: #6F8899;
+    --light: #9BB0BE;
+    --dark: #26344F;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+
+
+/*** Navbar ***/
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    margin-right: 25px;
+    padding: 35px 0;
+    color: #FFFFFF !important;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+    color: var(--dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.navbar-light .navbar-brand img {
+
+    transition: .5s;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: #FFFFFF;
+    }
+
+    .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--dark) !important;
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, .1);
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: #FFFFFF;
+    }
+
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        background: var(--primary);
+        transition: .5s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: calc(100% - 2px);
+        left: 1px;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+}
+
+
+/*** Hero Header ***/
+.hero-header {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/Farasan.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
+}
+
+
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+
+/*** Service ***/
+.service-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-item:hover {
+    background: var(--primary);
+}
+
+.service-item * {
+    transition: .5s;
+}
+
+.service-item:hover * {
+    color: var(--dark) !important;
+}
+
+
+/*** Destination ***/
+.destination img {
+    transition: .5s;
+}
+
+.destination a:hover img {
+    transform: scale(1.1);
+}
+
+
+/*** Footer ***/
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-weight: normal;
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+.text-primary {
+    color: var(--primary) !important;
+}
+.btn-primary {
+    color: #000;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: var(--dark);
+}
+a {
+    color:var(--primary);
+    text-decoration: none;
+}
+span.position-absolute.top-0.end-0.translate-middle.badge.rounded-pill.bg-danger {
+    top: 27px !important;
+}
+
+.booking-modal-content { border-radius: 1rem; overflow: hidden; }
+.booking-modal-header { background: linear-gradient(135deg, #516B82 0%, #26344F 100%); color: #fff; padding: 1.25rem 1.5rem; }
+.booking-modal-header .btn-close-white { filter: brightness(0) invert(1); }
+#bookingModal .form-control, #bookingModal .form-select { border-radius: 0.5rem; border: 1px solid #dee2e6; }
+#bookingModal .form-control:focus, #bookingModal .form-select:focus { border-color: #516B82; box-shadow: 0 0 0 0.2rem rgba(81, 107, 130, 0.25); }
+
+#reviewStars .review-star { cursor: pointer; opacity: 0.85; }
+#reviewStars .review-star:hover { opacity: 1; transform: scale(1.1); }
+#reviewStars .review-star i.far.fa-star { color: #dee2e6 !important; }
+#bookingFilter .nav-link { color: var(--primary); border: 1px solid #dee2e6; background: #fff; }
+#bookingFilter .nav-link:hover { background: #f8f9fa; border-color: var(--primary); }
+#bookingFilter .nav-link.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+#bookingsList .card { border-radius: 0.75rem; }
+
+.row-cards-equal .card.h-100 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.row-cards-equal .card .card-img-top,
+.row-cards-equal .card .position-relative:first-child {
+    flex-shrink: 0;
+}
+.row-cards-equal .card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+.row-cards-equal .card .card-body > *:last-child {
+    margin-top: auto;
+}
+
+#activitiesPlacesContainer .activity-place-card .card-body .list-unstyled {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+#activitiesPlacesContainer .activity-place-card .card-body > .d-flex.mb-2,
+#activitiesPlacesContainer .activity-place-card .card-body > .btn-primary {
+    flex-shrink: 0;
+}
+
+html { scroll-behavior: smooth; }
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+    #receiptModal, #receiptModal * {
+        visibility: visible !important;
+    }
+    #receiptModal {
+        position: static !important;
+    }
+    #receiptModal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+    }
+    #receiptModal .modal-content {
+        border: none;
+        box-shadow: none;
+    }
+}

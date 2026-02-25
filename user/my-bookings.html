@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Bookings – Marsa</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Jeddah, Saudi Arabia</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+966 5 0000 0000</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>support@marsa.sa</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center gap-2" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light rounded-pill px-3" href="profile.html"><i class="fa fa-user me-1"></i> Profile</a>
+                    <a class="btn btn-sm btn-outline-danger rounded-pill px-3" href="../login.html"><i class="fa fa-sign-out-alt me-1"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div id="home" class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2 p-0">
+                <img src="img/logo.png" alt="Marsa logo" style="height: 100px; width: 100px; object-fit: cover;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 align-items-center">
+                    <a href="index.html#home" class="nav-item nav-link">Home</a>
+                    <a href="all-islands.html" class="nav-item nav-link">Islands</a>
+                    <a href="my-bookings.html" class="nav-item nav-link active">My Bookings</a>
+                    <a href="complaints.html" class="nav-item nav-link">Complaints</a>
+                    
+                    <div class="dropdown">
+                        <a class="nav-item nav-link position-relative d-inline-flex align-items-center px-2 dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+                            <i class="fa fa-bell" style="font-size: 1.2rem;"></i>
+                            <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">2</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="notifDropdown" style="min-width: 280px; max-height: 320px; overflow-y: auto;">
+                            <li class="dropdown-header">Notifications</li>
+                            <li><a class="dropdown-item py-2" href="my-bookings.html"><strong>Booking confirmed</strong><br><small class="text-muted">Scuba Diving Farasan – 15 Mar 2025</small></a></li>
+                            <li><a class="dropdown-item py-2" href="my-bookings.html"><strong>Trip reminder</strong><br><small class="text-muted">Bird Watching Safari – 20 Feb 2025</small></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center small" href="notifications.html">View all</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white mb-3 animated slideInDown">My Bookings</h1>
+                        <p class="fs-4 text-white mb-4 animated slideInDown">View your trips</p>
+                        <nav aria-label="breadcrumb" class="animated slideInDown">
+                            <ol class="breadcrumb justify-content-center mb-0">
+                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                                <li class="breadcrumb-item text-white-50 active" aria-current="page">My Bookings</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Booking list -->
+    <div class="container-fluid py-5 bg-light my-bookings">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h6 class="section-title bg-light text-center text-primary px-3 mb-2">Booking history</h6>
+                <h2 class="mb-2">Your trips</h2>
+                <p class="text-muted mb-0">Track your upcoming and past trips, download receipts, and send complaints if something goes wrong.</p>
+            </div>
+
+            <ul class="nav nav-pills justify-content-center gap-2 mb-4" id="bookingFilter">
+                <li class="nav-item"><button type="button" class="nav-link active rounded-pill px-3" data-filter="all">All</button></li>
+                <li class="nav-item"><button type="button" class="nav-link rounded-pill px-3" data-filter="upcoming">Upcoming</button></li>
+                <li class="nav-item"><button type="button" class="nav-link rounded-pill px-3" data-filter="completed">Completed</button></li>
+            </ul>
+
+            <div class="row g-4" id="bookingsList">
+                <!-- Booking 1: Confirmed (upcoming) -->
+                <div class="col-12 booking-card" data-status="upcoming">
+                    <div class="card border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 col-lg-3">
+                                <img src="img/destination-2.jpg" class="img-fluid h-100 w-100" alt="Scuba Diving Farasan" style="object-fit: cover; min-height: 200px;">
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <div class="card-body d-flex flex-column p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <span class="badge bg-success rounded-pill mb-2">Confirmed</span>
+                                            <h5 class="card-title mb-1">Scuba Diving Farasan</h5>
+                                            <p class="text-muted small mb-0"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands</p>
+                                        </div>
+                                        <div class="text-md-end">
+                                            <small class="text-muted d-block">Booking #MRS-2025-001</small>
+                                            <strong class="text-primary fs-5">700 SAR</strong>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled small text-muted mb-2">
+                                        <li class="mb-1"><i class="fa fa-calendar-alt me-2 text-primary"></i><strong>Trip date:</strong> 15 March 2025</li>
+                                        <li class="mb-1"><i class="fa fa-users me-2 text-primary"></i><strong>Guests:</strong> 2 people</li>
+                                        <li class="mb-1"><i class="fa fa-tag me-2 text-primary"></i><strong>Price:</strong> 350 SAR/person × 2 = 700 SAR total</li>
+                                    </ul>
+                                    <div class="bg-light rounded p-3 small mb-3">
+                                        <strong class="d-block mb-2 text-dark">Activity details</strong>
+                                        <p class="mb-1"><span class="text-muted">Type:</span> Snorkeling boat trip</p>
+                                        <p class="mb-1"><i class="fa fa-map-marker-alt me-1 text-primary"></i>Farasan Islands, Southern Red Sea</p>
+                                        <p class="mb-1"><i class="fa fa-route me-1 text-primary"></i>Farasan marina → reef area → Farasan marina</p>
+                                        <p class="mb-2 text-muted">Half‑day boat trip with guided snorkeling around coral reefs near Farasan. Perfect for beginners and families.</p>
+                                        <div class="row g-1 text-muted">
+                                            <div class="col-6"><i class="fa fa-users me-1 text-primary"></i>Max: 12 people</div>
+                                            <div class="col-6"><i class="fa fa-clock me-1 text-primary"></i>Duration: 4 hours</div>
+                                            <div class="col-6"><i class="fa fa-clock me-1 text-primary"></i>Time: 08:00 – 12:00</div>
+                                            <div class="col-6"><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                                        <button type="button" class="btn btn-outline-primary btn-sm btn-receive-confirmation"
+                                            data-booking-id="MRS-2025-001"
+                                            data-activity="Scuba Diving Farasan"
+                                            data-date="15 March 2025"
+                                            data-guests="2 people"
+                                            data-total="700 SAR">
+                                            <i class="fa fa-file-alt me-1"></i>Receive confirmation &amp; receipt
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm btn-complaint"
+                                            data-bs-toggle="modal" data-bs-target="#complaintModal"
+                                            data-booking-id="MRS-2025-001">
+                                            <i class="fa fa-exclamation-circle me-1"></i>Make complaint
+                                        </button>
+                                        
+                                        <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                                            <i class="fa fa-times-circle me-1"></i>Request cancel / refund
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking 2: Completed -->
+                <div class="col-12 booking-card" data-status="completed">
+                    <div class="card border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 col-lg-3">
+                                <img src="img/Bird Watching Safari.jpg" class="img-fluid h-100 w-100" alt="Bird Watching Safari" style="object-fit: cover; min-height: 200px;">
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <div class="card-body d-flex flex-column p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <span class="badge bg-info rounded-pill mb-2">Completed</span>
+                                            <h5 class="card-title mb-1">Bird Watching Safari</h5>
+                                            <p class="text-muted small mb-0"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands</p>
+                                        </div>
+                                        <div class="text-md-end">
+                                            <small class="text-muted d-block">Booking #MRS-2025-002</small>
+                                            <strong class="text-primary fs-5">480 SAR</strong>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled small text-muted mb-2">
+                                        <li class="mb-1"><i class="fa fa-calendar-alt me-2 text-primary"></i><strong>Trip date:</strong> 20 February 2025</li>
+                                        <li class="mb-1"><i class="fa fa-users me-2 text-primary"></i><strong>Guests:</strong> 4 people</li>
+                                        <li class="mb-1"><i class="fa fa-tag me-2 text-primary"></i><strong>Price:</strong> 120 SAR/person × 4 = 480 SAR total</li>
+                                    </ul>
+                                    <div class="bg-light rounded p-3 small mb-3">
+                                        <strong class="d-block mb-2 text-dark">Activity details</strong>
+                                        <p class="mb-1"><span class="text-muted">Type:</span> Wildlife tour</p>
+                                        <p class="mb-1"><i class="fa fa-map-marker-alt me-1 text-primary"></i>Farasan Islands, bird reserve</p>
+                                        <p class="mb-1"><i class="fa fa-route me-1 text-primary"></i>Meeting point → reserve trails → Meeting point</p>
+                                        <p class="mb-2 text-muted">Early morning bird watching tour with expert guide. Spot migratory birds and learn about local wildlife.</p>
+                                        <div class="row g-1 text-muted">
+                                            <div class="col-6"><i class="fa fa-users me-1 text-primary"></i>Max: 15 people</div>
+                                            <div class="col-6"><i class="fa fa-clock me-1 text-primary"></i>Duration: 2 hours</div>
+                                            <div class="col-6"><i class="fa fa-clock me-1 text-primary"></i>Time: 06:00 – 08:00</div>
+                                            <div class="col-6"><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                                        <button type="button" class="btn btn-outline-primary btn-sm btn-receive-confirmation"
+                                            data-booking-id="MRS-2025-002"
+                                            data-activity="Bird Watching Safari"
+                                            data-date="20 February 2025"
+                                            data-guests="4 people"
+                                            data-total="480 SAR">
+                                            <i class="fa fa-file-alt me-1"></i>Receive confirmation &amp; receipt
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm btn-complaint"
+                                            data-bs-toggle="modal" data-bs-target="#complaintModal"
+                                            data-booking-id="MRS-2025-002">
+                                            <i class="fa fa-exclamation-circle me-1"></i>Make complaint
+                                        </button>
+                                      
+                                        <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                                            <i class="fa fa-star me-1"></i>Add review
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking 3: Confirmed (upcoming) -->
+                <div class="col-12 booking-card" data-status="upcoming">
+                    <div class="card border-0 shadow-sm overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4 col-lg-3">
+                                <img src="img/destination-3.jpg" class="img-fluid h-100 w-100" alt="Shura Boat Tour" style="object-fit: cover; min-height: 200px;">
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <div class="card-body d-flex flex-column p-4">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <span class="badge bg-success rounded-pill mb-2">Confirmed</span>
+                                            <h5 class="card-title mb-1">Shura Boat Tour</h5>
+                                            <p class="text-muted small mb-0"><i class="fa fa-map-marker-alt me-1"></i>Shura Island</p>
+                                        </div>
+                                        <div class="text-md-end">
+                                            <small class="text-muted d-block">Booking #MRS-2025-003</small>
+                                            <strong class="text-primary fs-5">1,080 SAR</strong>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled small text-muted mb-2">
+                                        <li class="mb-1"><i class="fa fa-calendar-alt me-2 text-primary"></i><strong>Trip date:</strong> 10 April 2025</li>
+                                        <li class="mb-1"><i class="fa fa-users me-2 text-primary"></i><strong>Guests:</strong> 6 people</li>
+                                        <li class="mb-1"><i class="fa fa-tag me-2 text-primary"></i><strong>Price:</strong> 180 SAR/person × 6 = 1,080 SAR total</li>
+                                    </ul>
+                                    <div class="bg-light rounded p-3 small mb-3">
+                                        <strong class="d-block mb-2 text-dark">Activity details</strong>
+                                        <p class="mb-1"><span class="text-muted">Type:</span> Boat tour</p>
+                                        <p class="mb-1"><i class="fa fa-map-marker-alt me-1 text-primary"></i>Shura Island, marina</p>
+                                        <p class="mb-1"><i class="fa fa-route me-1 text-primary"></i>Shura marina → coastal sites → Shura marina</p>
+                                        <p class="mb-2 text-muted">Scenic boat tour around Shura Island with stops for swimming and sightseeing.</p>
+                                        <div class="row g-1 text-muted">
+                                            <div class="col-6"><i class="fa fa-users me-1 text-primary"></i>Max: 12 people</div>
+                                            <div class="col-6"><i class="fa fa-clock me-1 text-primary"></i>Duration: 4 hours</div>
+                                            <div class="col-6"><i class="fa fa-clock me-1 text-primary"></i>Time: 09:00 – 13:00</div>
+                                            <div class="col-6"><i class="fa fa-user-tie me-1 text-primary"></i>Operator: shura_operator</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                                        <button type="button" class="btn btn-outline-primary btn-sm btn-receive-confirmation"
+                                            data-booking-id="MRS-2025-003"
+                                            data-activity="Shura Boat Tour"
+                                            data-date="10 April 2025"
+                                            data-guests="6 people"
+                                            data-total="1,080 SAR">
+                                            <i class="fa fa-file-alt me-1"></i>Receive confirmation &amp; receipt
+                                        </button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm btn-complaint"
+                                            data-bs-toggle="modal" data-bs-target="#complaintModal"
+                                            data-booking-id="MRS-2025-003">
+                                            <i class="fa fa-exclamation-circle me-1"></i>Make complaint
+                                        </button>
+                                        
+                                        <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                                            <i class="fa fa-times-circle me-1"></i>Request cancel / refund
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <!-- Modal: Cancel / Refund -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0" style="background: linear-gradient(135deg, #516B82 0%, #26344F 100%); color: #fff;">
+                    <h5 class="modal-title fw-semibold" id="cancelModalLabel"><i class="fa fa-times-circle me-2"></i>Request cancellation or refund</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small">Cancellation can be requested up to 48 hours before the trip. Refund within 7 days of payment.</p>
+                    <div class="mb-0">
+                        <label class="form-label">Reason (optional)</label>
+                        <textarea class="form-control" rows="3" placeholder="Tell us why you need to cancel..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning rounded-pill">Submit request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Make Complaint -->
+    <div class="modal fade" id="complaintModal" tabindex="-1" aria-labelledby="complaintModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0" style="background: linear-gradient(135deg, #516B82 0%, #26344F 100%); color: #fff;">
+                    <h5 class="modal-title fw-semibold" id="complaintModalLabel">
+                        <i class="fa fa-exclamation-circle me-2"></i>Make a complaint
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small">
+                        Please tell us what went wrong so we can help you. Our support team will reply to your complaint.
+                    </p>
+                   
+                    <form id="complaintForm">
+                        <div class="mb-3">
+                            <label for="complaintBookingId" class="form-label">Booking number</label>
+                            <input type="text" class="form-control" id="complaintBookingId" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="complaintSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="complaintSubject" placeholder=" Wrong time, quality issue, refund delay">
+                        </div>
+                        <div class="mb-3">
+                            <label for="complaintMessage" class="form-label">Details</label>
+                            <textarea class="form-control" id="complaintMessage" rows="4" placeholder="Describe your issue in detail..."></textarea>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger rounded-pill" id="submitComplaintBtn">Submit complaint</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add Review -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0" style="background: linear-gradient(135deg, #516B82 0%, #26344F 100%); color: #fff;">
+                    <h5 class="modal-title fw-semibold" id="reviewModalLabel"><i class="fa fa-star me-2"></i>Add review</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="mb-3">
+                        <label class="form-label">Rating (stars)</label>
+                        <div class="d-flex gap-1">
+                            <span class="fa fa-star text-warning" style="font-size:1.5rem"></span>
+                            <span class="fa fa-star text-warning" style="font-size:1.5rem"></span>
+                            <span class="fa fa-star text-warning" style="font-size:1.5rem"></span>
+                            <span class="fa fa-star text-warning" style="font-size:1.5rem"></span>
+                            <span class="far fa-star text-muted" style="font-size:1.5rem"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Comment</label>
+                        <textarea class="form-control" rows="3" placeholder="Share your experience..."></textarea>
+                    </div>
+                    <div class="mb-0">
+                        <label class="form-label">Upload photo (optional)</label>
+                        <input type="file" class="form-control" accept="image/*" multiple>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary rounded-pill">Submit review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Receipt / Confirmation -->
+    <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0" style="background: linear-gradient(135deg, #516B82 0%, #26344F 100%); color: #fff;">
+                    <h5 class="modal-title fw-semibold" id="receiptModalLabel">
+                        <i class="fa fa-file-alt me-2"></i>Booking confirmation &amp; receipt
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h6 class="text-muted text-uppercase small mb-2">Booking details</h6>
+                            <p class="mb-1"><strong>Booking number:</strong> <span id="receiptBookingId">—</span></p>
+                            <p class="mb-1"><strong>Activity:</strong> <span id="receiptActivity">—</span></p>
+                            <p class="mb-1"><strong>Trip date:</strong> <span id="receiptDate">—</span></p>
+                            <p class="mb-1"><strong>Guests:</strong> <span id="receiptGuests">—</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-muted text-uppercase small mb-2">Payment</h6>
+                            <p class="mb-1"><strong>Total amount:</strong> <span id="receiptTotal">—</span></p>
+                            <p class="mb-1 text-muted small">Payment method: Card (**** 1234)</p>
+                            <p class="mb-0 text-muted small">Status: Paid</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="text-muted small mb-0">
+                        This is a digital confirmation and receipt for your booking on Marsa. You can keep a copy for your records.
+                    </p>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary rounded-pill" onclick="window.print()">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Toast container for My Bookings page -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+        <div id="myBookingsToastContainer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/my-bookings.js"></script>
+    
+</body>
+</html>

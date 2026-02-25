@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Marsa – Farasan Islands</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Jeddah, Saudi Arabia</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+966 5 0000 0000</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>support@marsa.sa</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center gap-2" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light rounded-pill px-3" href="profile.html">
+                        <i class="fa fa-user me-1"></i> Profile
+                    </a>
+                    <a class="btn btn-sm btn-outline-danger rounded-pill px-3" href="../login.html">
+                        <i class="fa fa-sign-out-alt me-1"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div id="home" class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2 p-0">
+                <img src="img/logo.png" alt="Marsa logo" style="height: 100px; width: 100px; object-fit: cover;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 align-items-center">
+                    <a href="index.html#home" class="nav-item nav-link">Home</a>
+                    <a href="all-islands.html" class="nav-item nav-link active">Islands</a>
+                    <a href="my-bookings.html" class="nav-item nav-link">My Bookings</a>
+                    <a href="complaints.html" class="nav-item nav-link">Complaints</a>
+                    <div class="dropdown">
+                        <a class="nav-item nav-link position-relative d-inline-flex align-items-center px-2 dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+                            <i class="fa fa-bell" style="font-size: 1.2rem;"></i>
+                            <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">2</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="notifDropdown" style="min-width: 280px; max-height: 320px; overflow-y: auto;">
+                            <li class="dropdown-header">Notifications</li>
+                            <li><a class="dropdown-item py-2" href="my-bookings.html"><strong>Booking confirmed</strong><br><small class="text-muted">Scuba Diving Farasan – 15 Mar 2025</small></a></li>
+                            <li><a class="dropdown-item py-2" href="my-bookings.html"><strong>Trip reminder</strong><br><small class="text-muted">Bird Watching Safari – 20 Feb 2025</small></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center small" href="notifications.html">View all</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white mb-3 animated slideInDown">Farasan Islands</h1>
+                        <p class="fs-4 text-white mb-4 animated slideInDown">Historic archipelago in the southern Red Sea known for rich marine life, mangroves, and traditional villages.</p>
+                        <nav aria-label="breadcrumb" class="animated slideInDown">
+                            <ol class="breadcrumb justify-content-center mb-0">
+                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a class="text-white" href="all-islands.html">Islands</a></li>
+                                <li class="breadcrumb-item text-white-50 active" aria-current="page">Farasan Islands</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Farasan Weather Start -->
+    <div class="container-fluid py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h6 class="section-title bg-white text-center text-primary px-3 mb-2">Weather</h6>
+                <h5 class="mb-1">Today's weather in Farasan Islands</h5>
+                <small class="text-muted">Typical mild Red Sea conditions – ideal for outdoor activities.</small>
+            </div>
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-3 col-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-sun text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-1 text-dark">Temperature</h6>
+                        <div class="h4 mb-0 text-primary">29°C</div>
+                        <small class="text-muted">Feels like 31°C</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-cloud-sun text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-1 text-dark">Conditions</h6>
+                        <div class="h5 mb-0 text-primary">Mostly Sunny</div>
+                        <small class="text-muted">Strong UV, take sun protection</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-wind text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-1 text-dark">Wind</h6>
+                        <div class="h5 mb-0 text-primary">18 km/h</div>
+                        <small class="text-muted">Light coastal breeze</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="bg-white rounded shadow-sm p-3 h-100 text-center">
+                        <i class="fa fa-tint text-primary mb-2" style="font-size: 2rem;"></i>
+                        <h6 class="mb-1 text-dark">Sea & humidity</h6>
+                        <div class="h5 mb-0 text-primary">27°C | 65%</div>
+                        <small class="text-muted">Comfortable for swimming</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Farasan Weather End -->
+
+    <!-- Admin notifications / Alerts (shown when admin adds alerts for this island) -->
+    <div id="adminAlertsSection" class="container-fluid py-3 border-bottom bg-white">
+        <div class="container">
+            <h6 class="section-title bg-white text-start text-primary px-3 mb-3"><i class="fa fa-bell me-2"></i>Notifications &amp; alerts</h6>
+            <div id="adminAlertsList" class="row g-2">
+                <div class="col-12">
+                    <div class="alert alert-warning border-0 shadow-sm d-flex align-items-start gap-3 mb-0" role="alert">
+                        <i class="fa fa-exclamation-triangle fa-2x text-warning mt-1"></i>
+                        <div class="flex-grow-1">
+                            <strong class="d-block mb-1"><span class="badge bg-warning text-dark me-2">Weather</span> Island alert</strong>
+                            <p class="mb-1 small">High winds in the afternoon – boat trips may be delayed.</p>
+                            <small class="text-muted">Valid until 10 Feb 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Island Overview -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Island overview</h6>
+                    <h2 class="mb-3">About Farasan Islands</h2>
+                    <button type="button" id="btnFavIsland" class="btn btn-outline-danger btn-sm rounded-pill mb-3" title="Add island to favourites" aria-label="Add to favourites">
+                        <i class="fa fa-heart me-1"></i> <span id="favIslandLabel">Add island to favourites</span>
+                    </button>
+                    <p class="mb-3">
+                        Farasan Islands are a protected archipelago in the Jazan region. They feature coral reefs, pristine beaches,
+                        and unique architecture reflecting the area’s trading history.
+                    </p>
+                    <ul class="mb-3">
+                        <li><strong>Location</strong>: Southern Red Sea, off the coast of Jazan</li>
+                        <li><strong>Best season</strong>: October – April</li>
+                        <li><strong>Ideal for</strong>: snorkeling, diving, culture, photography, bird watching</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative rounded overflow-hidden h-100">
+                        <img class="img-fluid w-100 h-100" src="img/Farasan.jpg" alt="Farasan" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <!-- Island Features -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Features</h6>
+                <h2 class="mb-4">What makes Farasan special</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="fa fa-3x fa-water text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Marine biodiversity</h5>
+                        <p class="mb-0 small text-muted">Protected coral reefs home to diverse fish species, dolphins, and sea turtles.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="fa fa-3x fa-tree text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Mangrove forests</h5>
+                        <p class="mb-0 small text-muted">Extensive mangrove channels perfect for kayaking and bird watching.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="fa fa-3x fa-building text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Historic architecture</h5>
+                        <p class="mb-0 small text-muted">Traditional stone houses and mosques reflecting centuries of trade history.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="fa fa-3x fa-dove text-primary"></i>
+                        </div>
+                        <h5 class="mb-2">Bird sanctuary</h5>
+                        <p class="mb-0 small text-muted">Important stopover for migratory birds, especially during spring and autumn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotels Section -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Hotels</h6>
+                <h2 class="mb-4">Where to stay on Farasan</h2>
+            </div>
+            <div class="row g-4 row-cards-equal">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <img src="img/destination-2.jpg" class="card-img-top" alt="Farasan Heritage Hotel" style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Farasan Heritage Hotel</h5>
+                            <p class="card-text text-muted mb-3">Boutique stay inspired by traditional stone houses, close to the main harbor.</p>
+                            <ul class="mb-3 small">
+                                <li><i class="fa fa-check text-primary me-2"></i>Sea-view rooms and family suites</li>
+                                <li><i class="fa fa-check text-primary me-2"></i>Breakfast included, optional local dinner</li>
+                                <li><i class="fa fa-check text-primary me-2"></i>Walking distance to marina pick‑up point</li>
+                                <li><i class="fa fa-check text-primary me-2"></i>WiFi and air conditioning</li>
+                            </ul>
+                            <p class="mb-0 small text-muted"><i class="fa fa-map-marker-alt me-1"></i>Harbor district, central Farasan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <img src="img/destination-3.jpg" class="card-img-top" alt="Red Sea Eco Lodge" style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Red Sea Eco Lodge</h5>
+                            <p class="card-text text-muted mb-3">Low‑impact eco‑lodges near mangroves and bird‑watching zones.</p>
+                            <ul class="mb-3 small">
+                                <li><i class="fa fa-check text-primary me-2"></i>Solar‑powered chalets</li>
+                                <li><i class="fa fa-check text-primary me-2"></i>On‑site dive center and activity desk</li>
+                                <li><i class="fa fa-check text-primary me-2"></i>Kayak access to nearby mangrove channels</li>
+                                <li><i class="fa fa-check text-primary me-2"></i>Eco‑friendly amenities and practices</li>
+                            </ul>
+                            <p class="mb-0 small text-muted"><i class="fa fa-map-marker-alt me-1"></i>Mangrove bay, north of main village</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explore activities and places -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Explore</h6>
+                <h2 class="mb-3">Explore activities and places</h2>
+                <p class="text-muted mb-4">
+                    Discover activities and places on Farasan Islands. Add favourites and filter by price, rating or weather.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <label class="text-muted small mb-0">Price:</label>
+                        <select id="filterPrice" class="form-select form-select-sm" style="width: auto; min-width: 140px;">
+                            <option value="">Default</option>
+                            <option value="low">Low to high</option>
+                            <option value="high">High to low</option>
+                        </select>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <label class="text-muted small mb-0">Rating:</label>
+                        <select id="filterRating" class="form-select form-select-sm" style="width: auto; min-width: 140px;">
+                            <option value="">All</option>
+                            <option value="5">5 stars</option>
+                            <option value="4">4+ stars</option>
+                            <option value="3">3+ stars</option>
+                        </select>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <label class="text-muted small mb-0">Weather:</label>
+                        <select id="filterWeather" class="form-select form-select-sm" style="width: auto; min-width: 140px;">
+                            <option value="">All</option>
+                            <option value="sunny">Sunny</option>
+                            <option value="raining">Raining</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="activitiesPlacesContainer" class="row g-4 row-cards-equal">
+                <!-- Activity 1 -->
+                <div class="col-lg-4 col-md-6 activity-place-card" data-price="350" data-rating="4.5" data-weather="sunny" data-id="farasan-1">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="img/destination-2.jpg" class="card-img-top" alt="Snorkeling Reef Experience" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3"><span class="badge bg-primary">350 SAR</span></div>
+                            <button type="button" class="btn-fav-card position-absolute top-0 start-0 m-3 btn btn-light btn-sm rounded-circle shadow-sm" data-fav-id="farasan-1" title="Add to favourites" aria-label="Add to favourites"><i class="fa fa-heart text-muted"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-secondary">Activity</span>
+                                <span class="badge bg-info text-dark">Sunny</span>
+                            </div>
+                            <h5 class="card-title mb-2">Snorkeling Reef Experience</h5>
+                            <p class="small mb-1"><span class="text-muted">Type:</span> Snorkeling boat trip</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands, Southern Red Sea</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-route me-1"></i>Farasan marina → reef area → Farasan marina</p>
+                            <p class="card-text text-muted mb-2 small">Half‑day boat trip with guided snorkeling around coral reefs near Farasan. Perfect for beginners and families.</p>
+                            <ul class="list-unstyled small text-muted mb-2">
+                                <li><i class="fa fa-users me-1 text-primary"></i>Max: 12 people</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Duration: 4 hours</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Time: 08:00 – 12:00</li>
+                                <li><i class="fa fa-calendar me-1 text-primary"></i>Available: 1 Mar – 30 Apr 2026</li>
+                                <li><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</li>
+                            </ul>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></span>
+                                <small class="text-muted">(24 reviews)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 2 -->
+                <div class="col-lg-4 col-md-6 activity-place-card" data-price="180" data-rating="5" data-weather="raining" data-id="farasan-2">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="img/destination-3.jpg" class="card-img-top" alt="Historic Village Walk" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3"><span class="badge bg-primary">180 SAR</span></div>
+                            <button type="button" class="btn-fav-card position-absolute top-0 start-0 m-3 btn btn-light btn-sm rounded-circle shadow-sm" data-fav-id="farasan-2" title="Add to favourites" aria-label="Add to favourites"><i class="fa fa-heart text-muted"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-secondary">Activity</span>
+                                <span class="badge bg-info text-dark">Raining</span>
+                            </div>
+                            <h5 class="card-title mb-2">Historic Village Walk</h5>
+                            <p class="small mb-1"><span class="text-muted">Type:</span> Cultural walking tour</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands, Old Village</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-route me-1"></i>Heritage houses → mosque → local market → start</p>
+                            <p class="card-text text-muted mb-2 small">Guided walking tour through heritage houses, mosques, and local markets. Learn about Farasani culture and history.</p>
+                            <ul class="list-unstyled small text-muted mb-2">
+                                <li><i class="fa fa-users me-1 text-primary"></i>Max: 20 people</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Duration: 3 hours</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Time: 09:00 – 12:00</li>
+                                <li><i class="fa fa-calendar me-1 text-primary"></i>Available: 1 Mar – 30 Apr 2026</li>
+                                <li><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</li>
+                            </ul>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                <small class="text-muted">(18 reviews)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 3 -->
+                <div class="col-lg-4 col-md-6 activity-place-card" data-price="220" data-rating="5" data-weather="sunny" data-id="farasan-3">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="img/FarasanCoralResort.jpg" class="card-img-top" alt="Mangrove Kayak Tour" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3"><span class="badge bg-primary">220 SAR</span></div>
+                            <button type="button" class="btn-fav-card position-absolute top-0 start-0 m-3 btn btn-light btn-sm rounded-circle shadow-sm" data-fav-id="farasan-3" title="Add to favourites" aria-label="Add to favourites"><i class="fa fa-heart text-muted"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-secondary">Activity</span>
+                                <span class="badge bg-info text-dark">Sunny</span>
+                            </div>
+                            <h5 class="card-title mb-2">Mangrove Kayak Tour</h5>
+                            <p class="small mb-1"><span class="text-muted">Type:</span> Kayak eco-tour</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands, mangrove channels</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-route me-1"></i>Marina → mangrove channels → Marina</p>
+                            <p class="card-text text-muted mb-2 small">Low‑impact kayak trip inside mangrove channels with a focus on conservation. Spot birds and marine life.</p>
+                            <ul class="list-unstyled small text-muted mb-2">
+                                <li><i class="fa fa-users me-1 text-primary"></i>Max: 8 people</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Duration: 2.5 hours</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Time: 07:00 – 09:30</li>
+                                <li><i class="fa fa-calendar me-1 text-primary"></i>Available: 1 Mar – 30 Apr 2026</li>
+                                <li><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</li>
+                            </ul>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                <small class="text-muted">(31 reviews)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 4 -->
+                <div class="col-lg-4 col-md-6 activity-place-card" data-price="280" data-rating="4.5" data-weather="sunny" data-id="farasan-4">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="img/EnalaHotel.jpg" class="card-img-top" alt="Sunset Fishing Trip" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3"><span class="badge bg-primary">280 SAR</span></div>
+                            <button type="button" class="btn-fav-card position-absolute top-0 start-0 m-3 btn btn-light btn-sm rounded-circle shadow-sm" data-fav-id="farasan-4" title="Add to favourites" aria-label="Add to favourites"><i class="fa fa-heart text-muted"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-secondary">Activity</span>
+                                <span class="badge bg-info text-dark">Sunny</span>
+                            </div>
+                            <h5 class="card-title mb-2">Sunset Fishing Trip</h5>
+                            <p class="small mb-1"><span class="text-muted">Type:</span> Fishing boat trip</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands, harbour</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-route me-1"></i>Harbour → fishing grounds → Harbour</p>
+                            <p class="card-text text-muted mb-2 small">Evening fishing experience with local fishermen. Learn traditional techniques and enjoy the sunset over the Red Sea.</p>
+                            <ul class="list-unstyled small text-muted mb-2">
+                                <li><i class="fa fa-users me-1 text-primary"></i>Max: 6 people</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Duration: 3 hours</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Time: 16:00 – 19:00</li>
+                                <li><i class="fa fa-calendar me-1 text-primary"></i>Available: 1 Mar – 30 Apr 2026</li>
+                                <li><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</li>
+                            </ul>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></span>
+                                <small class="text-muted">(15 reviews)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 5 -->
+                <div class="col-lg-4 col-md-6 activity-place-card" data-price="150" data-rating="5" data-weather="raining" data-id="farasan-5">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="img/Bird Watching Safari.jpg" class="card-img-top" alt="Bird Watching Safari" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3"><span class="badge bg-primary">150 SAR</span></div>
+                            <button type="button" class="btn-fav-card position-absolute top-0 start-0 m-3 btn btn-light btn-sm rounded-circle shadow-sm" data-fav-id="farasan-5" title="Add to favourites" aria-label="Add to favourites"><i class="fa fa-heart text-muted"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-secondary">Activity</span>
+                                <span class="badge bg-info text-dark">Raining</span>
+                            </div>
+                            <h5 class="card-title mb-2">Bird Watching Safari</h5>
+                            <p class="small mb-1"><span class="text-muted">Type:</span> Wildlife tour</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands, bird reserve</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-route me-1"></i>Meeting point → reserve trails → Meeting point</p>
+                            <p class="card-text text-muted mb-2 small">Early morning bird watching tour with expert guide. Spot migratory birds and learn about local wildlife.</p>
+                            <ul class="list-unstyled small text-muted mb-2">
+                                <li><i class="fa fa-users me-1 text-primary"></i>Max: 15 people</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Duration: 2 hours</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Time: 06:00 – 08:00</li>
+                                <li><i class="fa fa-calendar me-1 text-primary"></i>Available: 1 Mar – 30 Apr 2026</li>
+                                <li><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</li>
+                            </ul>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                <small class="text-muted">(12 reviews)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 6 -->
+                <div class="col-lg-4 col-md-6 activity-place-card" data-price="450" data-rating="4.5" data-weather="sunny" data-id="farasan-6">
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="img/Scuba Diving Adventure.jpg" class="card-img-top" alt="Scuba Diving Adventure" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3"><span class="badge bg-primary">450 SAR</span></div>
+                            <button type="button" class="btn-fav-card position-absolute top-0 start-0 m-3 btn btn-light btn-sm rounded-circle shadow-sm" data-fav-id="farasan-6" title="Add to favourites" aria-label="Add to favourites"><i class="fa fa-heart text-muted"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                <span class="badge bg-secondary">Activity</span>
+                                <span class="badge bg-info text-dark">Sunny</span>
+                            </div>
+                            <h5 class="card-title mb-2">Scuba Diving Adventure</h5>
+                            <p class="small mb-1"><span class="text-muted">Type:</span> Diving trip</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-map-marker-alt me-1"></i>Farasan Islands, dive sites</p>
+                            <p class="small text-muted mb-1"><i class="fa fa-route me-1"></i>Marina → reef sites → Marina</p>
+                            <p class="card-text text-muted mb-2 small">Professional diving experience for certified divers. Explore vibrant coral reefs and diverse marine ecosystems.</p>
+                            <ul class="list-unstyled small text-muted mb-2">
+                                <li><i class="fa fa-users me-1 text-primary"></i>Max: 6 people</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Duration: 5 hours</li>
+                                <li><i class="fa fa-clock me-1 text-primary"></i>Time: 08:00 – 13:00</li>
+                                <li><i class="fa fa-calendar me-1 text-primary"></i>Available: 1 Mar – 30 Apr 2026</li>
+                                <li><i class="fa fa-user-tie me-1 text-primary"></i>Operator: farasan_guide</li>
+                            </ul>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></span>
+                                <small class="text-muted">(28 reviews)</small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Highlights & Reviews -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+            
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="text-center mb-4">
+                        <h6 class="section-title bg-white text-center text-primary px-3">Reviews</h6>
+                        <h2 class="mb-3">What visitors say</h2>
+                        <p class="text-muted mb-5">
+                            Real experiences from travelers who explored Farasan through Marsa.
+                        </p>
+                        <!-- Add your review -->
+                        <div class="bg-white rounded shadow-sm p-4 mb-5 text-start">
+                            <h5 class="mb-3"><i class="fa fa-edit me-2 text-primary"></i>Add your review</h5>
+                            <form id="addReviewForm" class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Your rating <span class="text-danger">*</span></label>
+                                    <div class="d-flex align-items-center gap-2" id="reviewStars" role="group" aria-label="Rate 1 to 5 stars">
+                                        <span class="review-star text-warning" data-rating="1" title="1 star"><i class="fa fa-star fa-lg"></i></span>
+                                        <span class="review-star text-warning" data-rating="2" title="2 stars"><i class="fa fa-star fa-lg"></i></span>
+                                        <span class="review-star text-warning" data-rating="3" title="3 stars"><i class="fa fa-star fa-lg"></i></span>
+                                        <span class="review-star text-warning" data-rating="4" title="4 stars"><i class="fa fa-star fa-lg"></i></span>
+                                        <span class="review-star text-warning" data-rating="5" title="5 stars"><i class="fa fa-star fa-lg"></i></span>
+                                        <span class="ms-2 small text-muted" id="reviewStarsLabel">Click to rate</span>
+                                    </div>
+                                    <input type="hidden" name="rating" id="reviewRating" value="0" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="reviewComment">Your comment <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="reviewComment" name="comment" rows="3" placeholder="Share your experience..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="reviewImage">Upload a photo (optional)</label>
+                                    <input type="file" class="form-control" id="reviewImage" name="image" accept="image/*">
+                                    <small class="text-muted">JPG, PNG or GIF. Max 5 MB.</small>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane me-2"></i>Submit review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row g-4" id="reviewsList">
+                        <!-- Review 1 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                    <span class="fw-bold">AA</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Ahmed A.</h6>
+                                                <small class="text-muted">Snorkeling Reef Experience</small>
+                                            </div>
+                                          
+                                        </div>
+                                        <p class="mb-3">"Great mix of culture and sea. Our family loved the snorkeling and the guide was very knowledgeable. The coral reefs were amazing!"</p>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-6">
+                                                <img src="img/destination-2.jpg" class="img-fluid rounded" alt="Review photo" style="height: 80px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                            <div class="col-6">
+                                                <img src="img/destination-3.jpg" class="img-fluid rounded" alt="Review photo" style="height: 80px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted"><i class="fa fa-calendar me-1"></i>March 15, 2026</small>
+                                        <div class="text-warning small">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                    <span class="fw-bold">SK</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Sara K.</h6>
+                                                <small class="text-muted">Mangrove Kayak Tour</small>
+                                            </div>
+                                            
+                                        </div>
+                                        <p class="mb-3">"The mangrove kayak tour was a highlight of our trip. We picked this operator after reading Marsa reviews. So peaceful and beautiful!"</p>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-12">
+                                                <img src="img/bg-hero.jpg" class="img-fluid rounded" alt="Review photo" style="height: 120px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted"><i class="fa fa-calendar me-1"></i>February 28, 2026</small>
+                                        <div class="text-warning small">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                    <span class="fw-bold">MH</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Mohammed H.</h6>
+                                                <small class="text-muted">Historic Village Walk</small>
+                                            </div>
+                                         
+                                        </div>
+                                        <p class="mb-3">"Amazing cultural experience! The traditional architecture and local stories made this trip unforgettable. Highly recommend!"</p>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-4">
+                                                <img src="img/Al-Wajh Island.avif" class="img-fluid rounded" alt="Review photo" style="height: 70px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="img/destination-2.jpg" class="img-fluid rounded" alt="Review photo" style="height: 70px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="img/destination-3.jpg" class="img-fluid rounded" alt="Review photo" style="height: 70px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted"><i class="fa fa-calendar me-1"></i>January 22, 2026</small>
+                                        <div class="text-warning small">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 4 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                    <span class="fw-bold">FK</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Fatima K.</h6>
+                                                <small class="text-muted">Sunset Fishing Trip</small>
+                                            </div>
+                                           
+                                        </div>
+                                        <p class="mb-3">"Perfect evening activity! Caught fish and enjoyed amazing sunset views. The local fishermen were friendly and taught us a lot."</p>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-6">
+                                                <img src="img/Al-Hasani Island.jpg" class="img-fluid rounded" alt="Review photo" style="height: 80px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                            <div class="col-6">
+                                                <img src="img/Farasan.jpg" class="img-fluid rounded" alt="Review photo" style="height: 80px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted"><i class="fa fa-calendar me-1"></i>March 8, 2026</small>
+                                        <div class="text-warning small">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 5 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                    <span class="fw-bold">YA</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Yusuf A.</h6>
+                                                <small class="text-muted">Scuba Diving Adventure</small>
+                                            </div>
+                                          
+                                        </div>
+                                        <p class="mb-3">"Best diving experience in Saudi Arabia! Professional team, amazing coral reefs, and diverse marine life. Worth every riyal!"</p>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-12">
+                                                <img src="img/destination-2.jpg" class="img-fluid rounded" alt="Review photo" style="height: 120px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted"><i class="fa fa-calendar me-1"></i>February 14, 2026</small>
+                                        <div class="text-warning small">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 6 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                    <span class="fw-bold">NM</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6 class="mb-0">Nora M.</h6>
+                                                <small class="text-muted">Bird Watching Safari</small>
+                                            </div>
+                                           
+                                        </div>
+                                        <p class="mb-3">"Early morning tour was magical! Saw so many beautiful birds. The guide was knowledgeable and patient. Great for photography enthusiasts!"</p>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-4">
+                                                <img src="img/images.jpg" class="img-fluid rounded" alt="Review photo" style="height: 70px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="img/bg-hero.jpg" class="img-fluid rounded" alt="Review photo" style="height: 70px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="img/Al Bahr Seafood.jpg" class="img-fluid rounded" alt="Review photo" style="height: 70px; width: 100%; object-fit: cover; cursor: pointer;" onclick="window.open(this.src, '_blank')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                        <small class="text-muted"><i class="fa fa-calendar me-1"></i>March 1, 2026</small>
+                                        <div class="text-warning small">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Marsa</h4>
+                    <a class="btn btn-link" href="index.html#about">About Marsa</a>
+                    <a class="btn btn-link" href="index.html#islands">Islands</a>
+                    <a class="btn btn-link" href="index.html#activities">Activities</a>
+                    <a class="btn btn-link" href="index.html#nearby">Nearby</a>
+                    <a class="btn btn-link" href="index.html#reviews">Reviews</a>
+                    <a class="btn btn-link" href="index.html#contact">Contact</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jeddah, Saudi Arabia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+966 5 0000 0000</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@marsa.sa</p>
+                    
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Marsa</a>, All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html#home">Home</a>
+                            <a href="index.html#about">About</a>
+                            <a href="index.html#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content booking-modal-content border-0 shadow-lg">
+                <div class="modal-header booking-modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-semibold" id="bookingModalLabel"><i class="fa fa-calendar-check me-2"></i>Make a booking</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3 pb-4 px-4">
+                    <p class="text-muted small mb-4">Choose your activity, date and number of people. You can continue to payment on the next step.</p>
+                    <form id="bookingModalForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-medium">Activity / Place</label>
+                            <select class="form-select form-select-lg" name="activity_id" id="bookingActivity" required>
+                                <option value="">— Select activity —</option>
+                                <option value="1" data-price="350">Scuba Diving Farasan – 350 SAR/person</option>
+                                <option value="2" data-price="120">Bird Watching Safari – 120 SAR/person</option>
+                                <option value="3" data-price="400">Scuba Diving Adventure – 400 SAR/person</option>
+                                <option value="4" data-price="180">Shura Boat Tour – 180 SAR/person</option>
+                                <option value="5" data-price="150">Shebara Snorkeling – 150 SAR/person</option>
+                                <option value="6" data-price="180">Historic Village Walk – 180 SAR/person</option>
+                                <option value="7" data-price="220">Mangrove Kayak Tour – 220 SAR/person</option>
+                                <option value="8" data-price="280">Sunset Fishing Trip – 280 SAR/person</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-medium">Trip date</label>
+                            <input type="date" class="form-control form-control-lg" name="trip_date" id="bookingDate" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-medium">Number of people</label>
+                            <input type="number" class="form-control form-control-lg" name="number_of_people" id="bookingGuests" min="1" value="1" required>
+                        </div>
+                        <div class="bg-light rounded-3 p-3 mb-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Estimated total</span>
+                                <span class="fw-bold text-primary" id="bookingTotal">0 SAR</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 fw-semibold rounded-pill" id="btnContinueToPayment">
+                            <i class="fa fa-arrow-right me-2"></i>Continue to payment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm booking & Pay with Visa modal (shown when booking not completed) -->
+    <div class="modal fade" id="confirmPayModal" tabindex="-1" aria-labelledby="confirmPayModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 pb-0" style="background: linear-gradient(135deg, #516B82 0%, #26344F 100%); color: #fff;">
+                    <h5 class="modal-title fw-semibold" id="confirmPayModalLabel"><i class="fa fa-credit-card me-2"></i>Confirm booking &amp; Pay with Visa</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="mb-4">
+                        <h6 class="text-primary mb-2">Booking summary</h6>
+                        <div class="bg-light rounded-3 p-3 small">
+                            <p class="mb-1"><strong>Activity:</strong> <span id="confirmActivityName">—</span></p>
+                            <p class="mb-1"><strong>Trip date:</strong> <span id="confirmTripDate">—</span></p>
+                            <p class="mb-1"><strong>Guests:</strong> <span id="confirmGuests">—</span> people</p>
+                            <p class="mb-0"><strong>Total:</strong> <span id="confirmTotal" class="text-primary fw-bold">0 SAR</span></p>
+                        </div>
+                    </div>
+                    <h6 class="text-primary mb-2">Pay with Visa</h6>
+                    <form id="confirmPayForm">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">Card number</label>
+                                <input type="text" class="form-control" id="visaCardNumber" placeholder="4111 1111 1111 1111" maxlength="19" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Expiry (MM/YY)</label>
+                                <input type="text" class="form-control" id="visaExpiry" placeholder="12/26" maxlength="5" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="visaCvv" placeholder="123" maxlength="4" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Cardholder name</label>
+                                <input type="text" class="form-control" id="visaName" placeholder="Name on card" required>
+                            </div>
+                        </div>
+                        <div class="mt-4 d-flex gap-2 flex-wrap">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4"><i class="fa fa-lock me-2"></i>Confirm &amp; Pay</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3" id="bookingToastContainer" style="z-index: 1090;"></div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/island.js"></script>
+    <script src="js/island-farasan.js"></script>
+</body>
+</html>
