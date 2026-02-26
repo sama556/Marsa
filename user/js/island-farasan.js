@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    // Filters
+  
     var container = document.getElementById('activitiesPlacesContainer');
     var filterPrice = document.getElementById('filterPrice');
     var filterRating = document.getElementById('filterRating');
@@ -48,7 +48,7 @@
         if (filterWeather) filterWeather.addEventListener('change', applyFilter);
     }
 
-    // Island favourite
+
     var btnIsland = document.getElementById('btnFavIsland');
     if (btnIsland) {
         var fav = [];
