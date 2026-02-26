@@ -81,7 +81,7 @@
         new bootstrap.Toast(div, { delay: 2500 }).show();
     }
 
-    // Receive confirmation & receipt button: show toast + receipt modal
+   
     var receiveButtons = document.querySelectorAll('.btn-receive-confirmation');
     var receiptModalEl = document.getElementById('receiptModal');
     var receiptBookingId = document.getElementById('receiptBookingId');

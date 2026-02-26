@@ -91,22 +91,47 @@
     var confirmForm = document.getElementById('confirmPayForm');
     var bookingModalEl = document.getElementById('bookingModal');
     var confirmModalEl = document.getElementById('confirmPayModal');
+    var bookingActivityNameInput = document.getElementById('bookingActivityName');
+    var bookingActivityPriceInput = document.getElementById('bookingActivityPrice');
+    document.querySelectorAll('.btn-open-booking').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            if (!bookingActivityNameInput || !bookingActivityPriceInput) return;
+            var name = this.getAttribute('data-activity-name') || '';
+            var price = parseInt(this.getAttribute('data-activity-price'), 10);
+            if (!name || isNaN(price)) return;
+
+            bookingActivityNameInput.value = name;
+            bookingActivityPriceInput.value = String(price);
+        });
+    });
 
     if (bookingForm && confirmForm && bookingModalEl && confirmModalEl) {
         bookingForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            var activitySelect = document.getElementById('bookingActivity');
             var dateInput = document.getElementById('bookingDate');
             var guestsInput = document.getElementById('bookingGuests');
             var totalEl = document.getElementById('bookingTotal');
-            var opt = activitySelect && activitySelect.options[activitySelect.selectedIndex];
+            var activityName = bookingActivityNameInput && bookingActivityNameInput.value.trim();
+            var activityPrice = bookingActivityPriceInput ? parseInt(bookingActivityPriceInput.value, 10) : NaN;
             var tripDate = dateInput && dateInput.value;
             var guests = guestsInput ? parseInt(guestsInput.value, 10) : 0;
+
+            if (!activityName) { alert('Please choose an activity from the cards.'); return; }
+            if (isNaN(activityPrice)) { alert('Selected activity has no price.'); return; }
             if (!tripDate) { alert('Please select a trip date.'); return; }
             if (!guests || guests < 1) { alert('Please enter number of guests.'); return; }
+
             var dateStr = tripDate;
-            try { dateStr = new Date(tripDate + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (err) {}
-            document.getElementById('confirmActivityName').textContent = opt ? opt.textContent : '—';
+            try {
+                dateStr = new Date(tripDate + 'T12:00:00').toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+            } catch (err) {}
+
+            document.getElementById('confirmActivityName').textContent =
+                activityName + ' \u2013 ' + activityPrice + ' SAR/person';
             document.getElementById('confirmTripDate').textContent = dateStr;
             document.getElementById('confirmGuests').textContent = guests;
             document.getElementById('confirmTotal').textContent = totalEl ? totalEl.textContent : '0 SAR';

@@ -52,6 +52,7 @@
                     <a href="index.html#home" class="nav-item nav-link">Home</a>
                     <a href="all-islands.html" class="nav-item nav-link">Islands</a>
                     <a href="my-bookings.html" class="nav-item nav-link">My Bookings</a>
+                    <a href="favourites.html" class="nav-item nav-link">Favourites</a>
                     <a href="complaints.html" class="nav-item nav-link">Complaints</a>
                     <div class="dropdown">
                         <a class="nav-item nav-link position-relative d-inline-flex align-items-center px-2 dropdown-toggle"
@@ -250,7 +251,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jeddah, Saudi Arabia</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Hafar Al-Batin, Saudi Arabia</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+966 5 0000 0000</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@marsa.sa</p>
                 </div>
@@ -305,107 +306,9 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <!-- Profile page script: reflect form inputs into static user row -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var form = document.getElementById('profileForm');
-            if (form) {
-                var userIdInput = form.elements['user_id'];
-                var roleInput = form.elements['role'];
-                var createdAtInput = form.elements['created_at'];
-                var usernameInput = form.elements['username'];
-                var emailInput = form.elements['email'];
-                var firstNameInput = form.elements['first_name'];
-                var lastNameInput = form.elements['last_name'];
-
-                var userIdCell = document.getElementById('user-id-cell');
-                var roleCell = document.getElementById('user-role-cell');
-                var createdAtCell = document.getElementById('user-created-at-cell');
-                var usernameCell = document.getElementById('user-username-cell');
-                var emailCell = document.getElementById('user-email-cell');
-                var firstNameCell = document.getElementById('user-first-name-cell');
-                var lastNameCell = document.getElementById('user-last-name-cell');
-
-                function syncUserRow() {
-                    if (userIdCell && userIdInput) {
-                        userIdCell.textContent = userIdInput.value || '';
-                    }
-                    if (roleCell && roleInput) {
-                        roleCell.textContent = roleInput.value || '';
-                    }
-                    if (createdAtCell && createdAtInput) {
-                        createdAtCell.textContent = createdAtInput.value || '';
-                    }
-                    if (usernameCell && usernameInput) {
-                        usernameCell.textContent = usernameInput.value || '';
-                    }
-                    if (emailCell && emailInput) {
-                        emailCell.textContent = emailInput.value || '';
-                    }
-                    if (firstNameCell && firstNameInput) {
-                        firstNameCell.textContent = firstNameInput.value || '';
-                    }
-                    if (lastNameCell && lastNameInput) {
-                        lastNameCell.textContent = lastNameInput.value || '';
-                    }
-                }
-
-                [usernameInput, emailInput, firstNameInput, lastNameInput].forEach(function (input) {
-                    if (input) {
-                        input.addEventListener('input', syncUserRow);
-                    }
-                });
-
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    syncUserRow();
-                    alert('Profile updated (demo only, not saved to a real server).');
-                });
-
-                // Initial sync to ensure table matches current input values
-                syncUserRow();
-            }
-
-            var passwordForm = document.getElementById('passwordForm');
-            if (passwordForm) {
-                var newPasswordInput = passwordForm.elements['new_password'];
-                var confirmPasswordInput = passwordForm.elements['confirm_password'];
-                var passwordCell = document.getElementById('user-password-cell');
-
-                passwordForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    if (!newPasswordInput || !confirmPasswordInput) return;
-
-                    var newPwd = newPasswordInput.value;
-                    var confirmPwd = confirmPasswordInput.value;
-
-                    if (!newPwd || !confirmPwd) {
-                        alert('Please fill in the new password and confirmation.');
-                        return;
-                    }
-                    if (newPwd !== confirmPwd) {
-                        alert('New password and confirmation do not match.');
-                        return;
-                    }
-
-                    if (passwordCell) {
-                        passwordCell.textContent = '•••••••••••••••••• (updated)';
-                    }
-
-                    newPasswordInput.value = '';
-                    confirmPasswordInput.value = '';
-                    if (passwordForm.elements['current_password']) {
-                        passwordForm.elements['current_password'].value = '';
-                    }
-
-                    alert('Password updated (demo only, not saved to a real server).');
-                });
-            }
-        });
-    </script>
+    <script src="js/profile.js"></script>
+    
+   
 </body>
 </html>
